@@ -22,6 +22,22 @@ Creator View 1
 
 ![Creator View 1](src/assets/images/creator_view_1.jpg)
 
+Creator View 2
+
+![Creator View 2](src/assets/images/creator_view_2.jpg)
+
+Creator View 3
+
+![Creator View 3](src/assets/images/creator_view_3.jpg)
+
+Participant View 1
+
+![Participant View 1](src/assets/images/participant_view_1.jpg)
+
+Participant View 2
+
+![Participant View 2](src/assets/images/participant_view_2.jpg)
+
 ##### Users
 * Unknown / Pageload
   * _On the initial visit, users will be greeted with the option to register an event, or enter a key to join an existing event, leading to the Creator or Participant views._

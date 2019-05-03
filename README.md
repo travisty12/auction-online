@@ -53,9 +53,10 @@ Creator View 1
 
 #### 11AM-Noon
 * _Draw initial component tree._
+* _Begin adding React code_
 
 # Development Notes
-
+* _I already have a lot of components planned, but I'm not sure about my route planning. I have three set paths, and a 404 path, but I'm wondering if I should be adding new paths for the NewItems and Settings components, and if I require even MORE components for each of those. I probably will need more, but I'll see that when I get to that point._
 
 ### Setup/Installation Requirements
 

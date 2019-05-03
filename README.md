@@ -8,6 +8,10 @@
 
 ## Planning
 
+#### Component Tree
+
+![Landing View](src/assets/images/component_tree.jpg)
+
 #### Sketching
 
 Landing Page
@@ -51,6 +55,7 @@ Creator View 1
 * _Draw initial component tree._
 
 # Development Notes
+
 
 ### Setup/Installation Requirements
 

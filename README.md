@@ -39,6 +39,9 @@ Participant View 2
 ![Participant View 2](src/assets/images/participant_view_2.jpg)
 
 ##### Users
+
+* _For the most part, I'm assuming my audience is widely tech-illiterate, and as such want to make the app simple. The purpose of the app is to be as intuitive (the least click-heavy) as possible. No more than 3 or 4 buttons per view, minimal routes with maximum functionality. Like a duck, I want the app to be pretty and smooth on the surface, and busy under the water._
+
 * Unknown / Pageload
   * _On the initial visit, users will be greeted with the option to register an event, or enter a key to join an existing event, leading to the Creator or Participant views._
 * Auction Creators
@@ -81,6 +84,21 @@ Participant View 2
 * _I already have a lot of components planned, but I'm not sure about my route planning. I have three set paths, and a 404 path, but I'm wondering if I should be adding new paths for the NewItems and Settings components, and if I require even MORE components for each of those. I probably will need more, but I'll see that when I get to that point._
 
 ### Setup/Installation Requirements
+* Open your preferred browser
+* To view the code, copy / paste
+  https://github.com/travisty12/auction-online
+* Make sure you're in your Desktop directory
+(cd ~/Desktop)
+* Run the following command to clone the template
+* `git clone https://travisty12/auction-online`
+* Open your terminal and navigate to the auction-online directory
+(cd auction-online)
+* Once in your terminal and proper directory run the command
+* `npm install` (provided you are free of errors continue and run the next command)
+* `npm run start` (should automatically open in your default browser)
+*  This will result in running on a local host
+* To run unit testing on the reducers, run the command
+* `npm run test`
 
 ## Known Bugs
 _No known bugs as of 5/3/19_

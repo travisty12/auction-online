@@ -14,6 +14,10 @@ Landing Page
 
 ![Landing View](src/assets/images/landing.jpg)
 
+Creator View 1
+
+![Creator View 1](src/assets/images/creator_view_1.jpg)
+
 ##### Users
 * Unknown / Pageload
   * _On the initial visit, users will be greeted with the option to register an event, or enter a key to join an existing event, leading to the Creator or Participant views._

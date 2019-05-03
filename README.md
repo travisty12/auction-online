@@ -45,6 +45,9 @@ Creator View 1
 
 #### 10-11AM
 * _Continue sketching page views._
+* _Eat snack_
+
+#### 11AM-Noon
 * _Draw initial component tree._
 
 # Development Notes

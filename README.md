@@ -24,19 +24,19 @@ Creator View 1
 
 Creator View 2
 
-![Creator View 2](src/assets/images/creator_view_2.png)
+![Creator View 2](src/assets/images/creator_view_2.jpg)
 
 Creator View 3
 
-![Creator View 3](src/assets/images/creator_view_3.png)
+![Creator View 3](src/assets/images/creator_view_3.jpg)
 
 Participant View 1
 
-![Participant View 1](src/assets/images/participant_view_1.png)
+![Participant View 1](src/assets/images/participant_view_1.jpg)
 
 Participant View 2
 
-![Participant View 2](src/assets/images/participant_view_2.png)
+![Participant View 2](src/assets/images/participant_view_2.jpg)
 
 ##### Users
 * Unknown / Pageload

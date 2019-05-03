@@ -24,8 +24,9 @@ function App(){
     <div className="mainContainer">
       <style jsx>{`
         .mainContainer {
-          background-color: #FFDC00;
-          outline: rgba(255, 220, 0, .3) solid 2px;
+          background-image: linear-gradient(to bottom right, #FFDC00 0%, #D4AF37 100%);
+          border: 2px solid rgba(255,255,255,0.2);
+          outline: rgba(255, 220, 0, .2) solid 2px;
           width: 80vw;
           max-width: 900px;
           height: 90vh;
@@ -44,7 +45,7 @@ function App(){
           margin: 0;
         }
         body {
-          background-color: red;
+          background-color: #800000;
           display: flex;
           justify-conent: center;
         }

@@ -22,8 +22,8 @@ function Landing(props){
       }
       `}</style>
       <h1>Auction Online</h1>
-      <button>Create Room</button>
-      <button>Join Room</button>
+      <Link to="/setup"><button>Create Room</button></Link>
+      <Link to="/room"><button>Join Room</button></Link>
     </div>
   );
 }

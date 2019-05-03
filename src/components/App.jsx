@@ -17,7 +17,6 @@ function App(){
   }
   updateMargin();
   window.addEventListener('resize', function() {
-      console.log(window.innerWidth);
       updateMargin();
     }, true);
 
@@ -25,13 +24,18 @@ function App(){
     <div className="mainContainer">
       <style jsx>{`
         .mainContainer {
-          background-color: yellow;
+          background-color: #FFDC00;
+          outline: rgba(255, 220, 0, .3) solid 2px;
           width: 80vw;
           max-width: 900px;
           height: 90vh;
           margin-top: 5vh;
           margin-left: ${marginWidth};
-          padding: 0 10% 0 10%;
+          margin-right: auto;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          box-shadow: 5px 5px 5px 2px rgba(0,0,0,0.3);
         }
         `}</style>
       <style global jsx>{`

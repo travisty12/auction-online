@@ -8,6 +8,12 @@
 
 ## Planning
 
+#### Sketching
+
+Landing Page
+
+![Landing View](src/assets/images/landing.jpg)
+
 ##### Users
 * Unknown / Pageload
   * _On the initial visit, users will be greeted with the option to register an event, or enter a key to join an existing event, leading to the Creator or Participant views._
@@ -27,6 +33,10 @@
 #### 8-9AM
 * _Read the 'Thinking In React' article on planning, mocking, creating static pages._
 * _Begin planning the user experience based on their role in the auction process._
+
+#### 9-10AM
+* _Plan logic for participant use._
+* _Plan shape of state / data._
 
 # Development Notes
 

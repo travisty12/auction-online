@@ -16,7 +16,13 @@
   * _Auction Creators should be able to input as many items as they wish, which will be stored in persistent state underneath their specific key._
   * _Auction Creators can determine the time and length of the auctions, as well as any minimum bids required, and control access to the auction with the distribution of their key._
 * Auction Participants
-  * _Auction Participants will be able to use that key to enter the 'auction room' at the allotted time._
+  * _Auction Participants will be able to use that key to enter the 'auction room' at the allotted time, at which point they will be prompted to enter a username, which will be required for them to bid._
+  * _Participants will be able to join a live chat._
+  * _The order of the items for bid will be randomized once, before bidding starts._
+  * _The items in the auction will be put up for bid one at a time, for a duration determined by the Creators._
+  * _During that item's bidding period, the current highest bid will be displayed, along with the bidder's username, with a default '$0, Current bidder: No bids yet'._
+  * _Users can input a bid. The program will check if the bid is higher than the current highest bid, and if so, will update the screen with the new bid and bidder's username._
+  * _After the bidding period ends, the next item for bid will be displayed, perhaps after a buffer period to allow participants to prepare, and all previous items will be displayed in their finalized form._
 
 #### 8-9AM
 * _Read the 'Thinking In React' article on planning, mocking, creating static pages._

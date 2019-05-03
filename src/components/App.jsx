@@ -25,8 +25,8 @@ function App(){
       <style jsx>{`
         .mainContainer {
           background-image: linear-gradient(to bottom right, #FFDC00 0%, #D4AF37 100%);
-          border: 2px solid rgba(255,255,255,0.2);
-          outline: rgba(255, 220, 0, .2) solid 2px;
+          border: 2px solid rgba(00,00,00,0.1);
+          outline: rgba(255, 220, 0, .1) solid 2px;
           width: 80vw;
           max-width: 900px;
           height: 90vh;

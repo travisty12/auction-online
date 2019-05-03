@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-function Previous(props){
+function InviteLink(props){
   return (
     <div>
-      <h1>Previous Working</h1>
+      <h1>InviteLink Working</h1>
     </div>
   );
 }
 
-Previous.propTypes = {
+InviteLink.propTypes = {
 };
 
-export default Previous;
+export default InviteLink;

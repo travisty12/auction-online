@@ -1,11 +1,15 @@
 import React from 'react';
+import InviteLink from './InviteLink';
+import Settings from './Settings';
+import AddItems from './AddItems';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
 function Setup(props){
   return (
     <div>
-      <h1>Setup Working</h1>
+      <InviteLink />
+      <Settings />
+      <AddItems />
     </div>
   );
 }

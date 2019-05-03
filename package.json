@@ -1,0 +1,40 @@
+{
+  "name": "auction-online",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest && exit 0",
+    "start": "webpack-dev-server --open",
+    "lint": "eslint src/** src/**/** && exit 0",
+    "lint-fix": "eslint src/** src/**/** --fix && exit 0"
+  },
+  "author": "Travis Toal",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.18.1",
+    "prop-types": "^15.5.10",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.0.0",
+    "redux": "^3.7.2",
+    "styled-jsx": "^3.2.1",
+    "uuid": "^3.2.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-jest": "^20.0.3",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^4.13.1",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-react": "^7.12.4",
+    "file-loader": "^1.1.6",
+    "html-webpack-plugin": "^2.29.0",
+    "react-hot-loader": "^3.0.0-beta.7",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.4.0",
+    "webpack-dev-server": "^2.5.0"
+  }
+}

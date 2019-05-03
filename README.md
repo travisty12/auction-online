@@ -41,6 +41,11 @@ Creator View 1
 #### 9-10AM
 * _Plan logic for participant use._
 * _Plan shape of state / data._
+* _Sketch out initial page views_
+
+#### 10-11AM
+* _Continue sketching page views._
+* _Draw initial component tree._
 
 # Development Notes
 

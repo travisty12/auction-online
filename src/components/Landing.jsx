@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Join from './Join';
+import Create from './Create';
 import { Link } from 'react-router-dom';
 
 function Landing(props){
@@ -23,7 +24,7 @@ function Landing(props){
       }
       `}</style>
       <h1>Auction Online</h1>
-      <Link to="/setup"><button>Create Room</button></Link>
+      <Create />
       <Join />
     </div>
   );

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import CheckKey from './CheckKey';
 import { Link } from 'react-router-dom';
 
 function Join(props){
@@ -8,7 +9,7 @@ function Join(props){
   function buttonClick() {
     clicked = true;
   }
-  if (!clicked) {
+  if (clicked) {
     keyChecker = <button onClick={() => buttonClick()}>Join Room</button>;
   } else {
     keyChecker = <CheckKey />

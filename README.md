@@ -85,7 +85,10 @@ Participant View 2
 
 # State Management
 
-
+* _I'm planning on using Redux and sending the store to Firebase._
+* _There will be local application state checking the users' credentials, keeping them on the correct route._
+* _Once in their respective route, there will be state information passed down from Firebase:_
+  * _Auction creators will modify the ItemList information which will need to communicate with NewItem, so their state should reside in AddItems. They will also determine the time and specifications of the auction, which will reside in Settings, and be changed by its components. The Link component will receive a random ID from Firebase on creation which will be the key to enter the room._
 
 ### Setup/Installation Requirements
 * Open your preferred browser

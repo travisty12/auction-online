@@ -4,6 +4,7 @@ import Landing from './Landing';
 import Setup from './Setup';
 import Room from './Room';
 import Header from './Header';
+import Settings from './Settings';
 import Error404 from './Error404';
 
 function App(){
@@ -53,6 +54,7 @@ function App(){
         <Route exact path='/' component={Landing} />
         <Route path='/room' component={Room} />
         <Route path='/setup' component={Setup} />
+        <Route path='/settings' component={Settings} />
         <Route component={Error404} />
       </Switch>
 

@@ -3,6 +3,7 @@ import InviteLink from './InviteLink';
 import Settings from './Settings';
 import AddItems from './AddItems';
 import Back from './Back';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 function Setup(props){
@@ -13,6 +14,7 @@ function Setup(props){
     justifyContent: 'space-around',
     alignItems: 'center',
   };
+
   const ButtonStyle = {
     backgroundColor: '#800000',
     color: 'white',
@@ -22,7 +24,7 @@ function Setup(props){
   return (
     <div style={SetupStyle}>
       <InviteLink />
-      <Settings />
+      <Link to='/settings'><button style={ButtonStyle}>Settings</button></Link>
       <AddItems />
       <button style={ButtonStyle}>Confirm</button>
     </div>

@@ -9,12 +9,12 @@ function Settings(props){
     backgroundColor: '#800000',
     color: 'white',
     padding: '5px',
+    border: 'none',
   };
-  let settingsContents = <h1 style={SettingsStyle}>Settings</h1>;
-  let innerSettings = <div><Time /><BidInfo /></div>;
   return (
     <div>
-      {settingsContents}
+      <Time />
+      <BidInfo />
     </div>
   );
 }

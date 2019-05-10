@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Items from './Items';
 import Chat from './Chat';
+import Back from './Back';
 import { Link } from 'react-router-dom';
 
 function Room(props){
@@ -15,7 +16,10 @@ function Room(props){
   }
   return (
     <div style={RoomStyle}>
-      <h1>Auction Online</h1>
+      <div>
+        <Back />
+        <h1>Auction Online</h1>
+      </div>
       <Items />
       <Chat />
     </div>

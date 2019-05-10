@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function Back(props){
   return (
     <div>
-      <h4>Back</h4>
+      <h4><Link to='/'>Back</Link></h4>
     </div>
   );
 }

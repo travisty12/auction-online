@@ -9,7 +9,7 @@ function Create(props){
   function buttonClick() {
     clicked = true;
   }
-  if (clicked) {
+  if (!clicked) {
     register = <button onClick={() => buttonClick()}>Create Room</button>;
   } else {
     register = <Register />

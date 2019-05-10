@@ -16,7 +16,7 @@ function Landing(props){
         justify-content: space-around;
         align-items: center;
       }
-      button {
+      div button {
         background-color: red;
         border: none;
         padding: 5px;

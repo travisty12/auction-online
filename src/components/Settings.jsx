@@ -5,11 +5,16 @@ import Time from './Time';
 import BidInfo from './BidInfo';
 
 function Settings(props){
+  const SettingsStyle = {
+    backgroundColor: '#800000',
+    color: 'white',
+    padding: '5px',
+  };
+  let settingsContents = <h1 style={SettingsStyle}>Settings</h1>;
+  let innerSettings = <div><Time /><BidInfo /></div>;
   return (
     <div>
-      <h1>Settings Working</h1>
-      <Time />
-      <BidInfo />
+      {settingsContents}
     </div>
   );
 }

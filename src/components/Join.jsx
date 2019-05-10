@@ -3,11 +3,21 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 function Join(props){
+  let keyChecker = null;
+  let clicked = false;
+  function buttonClick() {
+    clicked = true;
+  }
+  if (!clicked) {
+    keyChecker = <button onClick={() => buttonClick()}>Join Room</button>;
+  } else {
+    keyChecker = <CheckKey />
+  }
   return (
     <div>
-      <h1>Join Working</h1>
+      {keyChecker}
     </div>
-  );
+  )
 }
 
 Join.propTypes = {

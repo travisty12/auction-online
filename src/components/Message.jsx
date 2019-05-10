@@ -9,7 +9,7 @@ function Message(props){
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'spaceBetween'
+    justifyContent: 'space-between'
   };
   return (
     <div style={MessageStyle}>

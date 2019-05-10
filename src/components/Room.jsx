@@ -7,14 +7,17 @@ import { Link } from 'react-router-dom';
 function Room(props){
   const RoomStyle = {
     width: '100%',
+    height: '100%',
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center'
+    alignItems: 'center',
+    justifyContent: 'space-between'
   }
   return (
     <div style={RoomStyle}>
-    <Items />
-    <Chat />
+      <h1>Auction Online</h1>
+      <Items />
+      <Chat />
     </div>
   );
 }

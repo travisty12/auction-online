@@ -5,10 +5,34 @@ import Previous from './Previous';
 import Current from './Current';
 
 function Items(props){
+
+  const minBid = 5;
+
+  let masterItemList = [
+    {
+      item: 'Item1',
+      bid: minBid,
+      bidder: 'bidder1'
+    },
+    {
+      item: 'Item2',
+      bid: minBid,
+      bidder: 'bidder2'
+    },
+    {
+      item: 'Item3',
+      bid: minBid,
+      bidder: 'bidder3'
+    },
+  ];
+
+  const ItemsStyle = {
+    width: '100%'
+  }
+
   return (
-    <div>
-      <h1>Items Working</h1>
-      <Previous />
+    <div style={ItemsStyle}>
+      <Previous itemList={masterItemList} />
       <Current />
     </div>
   );

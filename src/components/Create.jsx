@@ -15,7 +15,7 @@ function Create(props){
     padding: '5px',
     color: 'white'
   }
-  if (!clicked) {
+  if (clicked) {
     register = <button style={ButtonStyle} onClick={() => buttonClick()}>Create Room</button>;
   } else {
     register = <Register />

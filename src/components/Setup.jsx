@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 function Setup(props){
   return (
     <div>
+      <h1>Auction Online</h1>
       <InviteLink />
       <Settings />
       <AddItems />

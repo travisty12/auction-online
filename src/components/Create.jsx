@@ -9,8 +9,14 @@ function Create(props){
   function buttonClick() {
     clicked = true;
   }
+  const ButtonStyle = {
+    backgroundColor: 'red',
+    border: 'none',
+    padding: '5px',
+    color: 'white'
+  }
   if (!clicked) {
-    register = <button onClick={() => buttonClick()}>Create Room</button>;
+    register = <button style={ButtonStyle} onClick={() => buttonClick()}>Create Room</button>;
   } else {
     register = <Register />
   }

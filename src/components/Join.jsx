@@ -9,8 +9,14 @@ function Join(props){
   function buttonClick() {
     clicked = true;
   }
+  const ButtonStyle = {
+    backgroundColor: 'red',
+    border: 'none',
+    padding: '5px',
+    color: 'white'
+  }
   if (clicked) {
-    keyChecker = <button onClick={() => buttonClick()}>Join Room</button>;
+    keyChecker = <button style={ButtonStyle} onClick={() => buttonClick()}>Join Room</button>;
   } else {
     keyChecker = <CheckKey />
   }

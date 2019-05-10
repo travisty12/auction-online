@@ -1,2 +1,2 @@
-export const ACTION_ONE = 'ACTION_ONE';
-export const ACTION_TWO = 'ACTION_TWO';
+export const REGISTER_ROOM = 'REGISTER_ROOM';
+export const CHECK_KEY = 'CHECK_KEY';

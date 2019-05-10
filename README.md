@@ -83,6 +83,10 @@ Participant View 2
 # Development Notes
 * _I already have a lot of components planned, but I'm not sure about my route planning. I have three set paths, and a 404 path, but I'm wondering if I should be adding new paths for the NewItems and Settings components, and if I require even MORE components for each of those. I probably will need more, but I'll see that when I get to that point._
 
+# State Management
+
+
+
 ### Setup/Installation Requirements
 * Open your preferred browser
 * To view the code, copy / paste

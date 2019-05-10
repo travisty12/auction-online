@@ -6,13 +6,15 @@ import BidInfo from './BidInfo';
 
 function Settings(props){
   const SettingsStyle = {
-    backgroundColor: '#800000',
-    color: 'white',
-    padding: '5px',
-    border: 'none',
+    height: '90%',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'space-around'
   };
   return (
-    <div>
+    <div style={SettingsStyle}>
+      <h1>Settings</h1>
       <Time />
       <BidInfo />
     </div>

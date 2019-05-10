@@ -7,7 +7,7 @@ import TimePerItem from './TimePerItem';
 function BidInfo(props){
   return (
     <div>
-      <h1>BidInfo Working</h1>
+      <h1>Setup bidding</h1>
       <MinBid />
       <TimePerItem />
     </div>

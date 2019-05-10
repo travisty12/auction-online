@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function Time(props){
   return (
     <div>
-      <h1>Time Working</h1>
+      <h1>Set time</h1>
     </div>
   );
 }

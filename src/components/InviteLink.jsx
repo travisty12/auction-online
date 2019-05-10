@@ -7,6 +7,7 @@ function InviteLink(props){
     backgroundColor: '#800000',
     color: 'white',
     padding: '5px',
+    borderRadius: '10px',
   };
   return (
     <div style={InviteLinkStyle}>

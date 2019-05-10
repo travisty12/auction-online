@@ -9,6 +9,7 @@ function AddItems(props){
     backgroundColor: '#800000',
     color: 'white',
     padding: '5px',
+    borderRadius: '10px',
   };
   let addItemsContents = <h1 style={AddItemsStyle}>Add Items</h1>;
   let list = <ItemList />;

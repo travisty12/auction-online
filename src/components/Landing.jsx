@@ -16,14 +16,13 @@ function Landing(props){
         justify-content: space-around;
         align-items: center;
       }
-      div button {
+      button {
         background-color: red;
         border: none;
         padding: 5px;
         color: white;
       }
       `}</style>
-      <h1>Auction Online</h1>
       <Create />
       <Join />
     </div>

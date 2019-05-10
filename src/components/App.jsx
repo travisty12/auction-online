@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import Landing from './Landing';
 import Setup from './Setup';
 import Room from './Room';
+import Header from './Header';
 import Error404 from './Error404';
 
 function App(){
@@ -34,6 +35,7 @@ function App(){
           margin-left: ${marginWidth};
           margin-right: auto;
           display: flex;
+          flex-direction: column,
           justify-content: center;
           align-items: center;
           box-shadow: 5px 5px 5px 2px rgba(0,0,0,0.3);
@@ -50,6 +52,7 @@ function App(){
           justify-conent: center;
         }
         `}</style>
+      <Header />
       <Switch>
         <Route exact path='/' component={Landing} />
         <Route path='/room' component={Room} />

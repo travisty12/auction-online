@@ -16,10 +16,6 @@ function Room(props){
   }
   return (
     <div style={RoomStyle}>
-      <div>
-        <Back />
-        <h1>Auction Online</h1>
-      </div>
       <Items />
       <Chat />
     </div>

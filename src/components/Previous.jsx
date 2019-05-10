@@ -13,10 +13,10 @@ function Previous(props){
     border: 'none',
     padding: '5px',
     color: 'white'
-  }
+  };
   const PreviousStyle = {
     width: '100%'
-  }
+  };
   const PreviousListStyle = {
     backgroundColor: 'lightgrey',
     margin: '3px',
@@ -24,7 +24,7 @@ function Previous(props){
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center'
-  }
+  };
   if (!clicked) {
     previous = <button style={ButtonStyle} onClick={() => buttonClick()}>Previous Items</button>;
   } else {

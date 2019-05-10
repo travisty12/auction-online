@@ -11,7 +11,10 @@ function AddItems(props){
     padding: '5px',
     borderRadius: '10px',
   };
-  let addItemsContents = <h1 style={AddItemsStyle}>Add Items</h1>;
+  const LinkStyle = {
+    textDecoration: 'none',
+  };
+  let addItemsContents = <Link to='/additems' style={LinkStyle}><h1 style={AddItemsStyle}>Add Items</h1></Link>;
   let list = <ItemList />;
 
   return (

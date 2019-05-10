@@ -5,6 +5,7 @@ import Setup from './Setup';
 import Room from './Room';
 import Header from './Header';
 import Settings from './Settings';
+import ItemList from './ItemList';
 import Error404 from './Error404';
 
 function App(){
@@ -55,6 +56,7 @@ function App(){
         <Route path='/room' component={Room} />
         <Route path='/setup' component={Setup} />
         <Route path='/settings' component={Settings} />
+        <Route path='/additems' component={ItemList} />
         <Route component={Error404} />
       </Switch>
 

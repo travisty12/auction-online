@@ -20,7 +20,7 @@ function Time(props){
   function buttonClick() {
     clicked = true;
   }
-  if (clicked) {
+  if (!clicked) {
     timeSetup = <button style={TimeStyle} onClick={() => buttonClick()}>Set time</button>;
   } else {
     timeSetup = <div style={DivStyle} ><h3>Set auction time:</h3><input type="datetime-local" /><button style={TimeStyle}>Submit</button></div>

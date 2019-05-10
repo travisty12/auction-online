@@ -25,7 +25,7 @@ function Previous(props){
     justifyContent: 'space-between',
     alignItems: 'center'
   }
-  if (clicked) {
+  if (!clicked) {
     previous = <button style={ButtonStyle} onClick={() => buttonClick()}>Previous Items</button>;
   } else {
     previous = <div>{props.itemList.map((item, index) =>

@@ -8,9 +8,14 @@ function Register(props){
     border: 'none',
     padding: '5px',
     color: 'white'
+  };
+  const RegisterStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
   }
   return (
-    <div>
+    <div style={RegisterStyle}>
       <h3>Enter your email to recieve a room key:</h3>
       <input />
       <Link to="/setup"><button style={ButtonStyle} >Submit</button></Link>

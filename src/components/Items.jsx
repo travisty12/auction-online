@@ -32,8 +32,8 @@ function Items(props){
 
   return (
     <div style={ItemsStyle}>
-      <Previous itemList={masterItemList} />
       <Current />
+      <Previous itemList={masterItemList} />
     </div>
   );
 }

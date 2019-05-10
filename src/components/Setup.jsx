@@ -8,10 +8,6 @@ import PropTypes from 'prop-types';
 function Setup(props){
   return (
     <div>
-      <div>
-        <Back />
-        <h1>Auction Online</h1>
-      </div>
       <InviteLink />
       <Settings />
       <AddItems />

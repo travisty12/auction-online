@@ -4,10 +4,17 @@ import Back from './Back';
 import { Link } from 'react-router-dom';
 
 function Header(props){
+  const HeaderStyle = {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around'
+  }
   return (
-    <div>
+    <div style={HeaderStyle}>
       <Back />
-      <h4>Auction Online</h4>
+      <h1>Auction Online</h1>
+      <h6>.</h6>
     </div>
   );
 }

@@ -34,10 +34,6 @@ function App(){
           margin-top: 5vh;
           margin-left: ${marginWidth};
           margin-right: auto;
-          display: flex;
-          flex-direction: column,
-          justify-content: center;
-          align-items: center;
           box-shadow: 5px 5px 5px 2px rgba(0,0,0,0.3);
         }
         `}</style>

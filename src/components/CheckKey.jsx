@@ -8,9 +8,14 @@ function CheckKey(props){
     border: 'none',
     padding: '5px',
     color: 'white'
-  }
+  };
+  const CheckKeyStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  };
   return (
-    <div>
+    <div style={CheckKeyStyle}>
       <h3>Enter the room's key:</h3>
       <input />
       <Link to="/room"><button style={ButtonStyle} >Submit</button></Link>

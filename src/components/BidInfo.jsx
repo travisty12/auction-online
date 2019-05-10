@@ -22,7 +22,7 @@ function BidInfo(props){
   function buttonClick() {
     clicked = true;
   }
-  if (clicked) {
+  if (!clicked) {
     biddingSetup = <button style={ButtonStyle} onClick={() => buttonClick()}>Set bid specs</button>;
   } else {
     biddingSetup = <div style={BidInfoStyle}><MinBid /><TimePerItem /><button style={ButtonStyle}>Submit</button></div>

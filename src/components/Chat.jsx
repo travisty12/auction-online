@@ -5,9 +5,14 @@ import MessageList from './MessageList';
 import Compose from './Compose';
 
 function Chat(props){
+  const ChatStyle = {
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
+  }
   return (
-    <div>
-      <h1>Chat Working</h1>
+    <div style ={ChatStyle}>
       <MessageList />
       <Compose />
     </div>

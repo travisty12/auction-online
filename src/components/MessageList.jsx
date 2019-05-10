@@ -29,7 +29,8 @@ function MessageList(props){
 
   const MessageListStyle = {
     padding: '2px',
-    backgroundColor: 'grey'
+    backgroundColor: 'grey',
+    width: '100%'
   }
 
   return (

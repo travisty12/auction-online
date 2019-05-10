@@ -5,8 +5,14 @@ import Chat from './Chat';
 import { Link } from 'react-router-dom';
 
 function Room(props){
+  const RoomStyle = {
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
+  }
   return (
-    <div>
+    <div style={RoomStyle}>
     <Items />
     <Chat />
     </div>

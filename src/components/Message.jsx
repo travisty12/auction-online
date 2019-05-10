@@ -5,11 +5,17 @@ import { Link } from 'react-router-dom';
 function Message(props){
   const MessageStyle = {
     backgroundColor: 'lightgrey',
-    margin: '3px'
+    margin: '3px',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'spaceBetween'
   };
   return (
     <div style={MessageStyle}>
-      <h4>{props.name} - {props.timestamp}</h4>
+      <div>
+        <h4>{props.name} - {props.time}</h4>
+      </div>
       <h4>{props.content}</h4>
     </div>
   );

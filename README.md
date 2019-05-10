@@ -89,6 +89,8 @@ Participant View 2
 * _There will be local application state checking the users' credentials, keeping them on the correct route._
 * _Once in their respective route, there will be state information passed down from Firebase:_
   * _Auction creators will modify the ItemList information which will need to communicate with NewItem, so their state should reside in AddItems. They will also determine the time and specifications of the auction, which will reside in Settings, and be changed by its components. The Link component will receive a random ID from Firebase on creation which will be the key to enter the room._
+  * _Auction participants will receive the Chat state slice in the Chat component, which will pass down the list of individual messages to MessageList, and the required functionality to compose a new message to Compose. On submission, Compose will send a new message back to Chat, which will push it into the Firebase chat log. The Items component will recieve a slice of the ItemList state one-by-one, keeping it in Current for the duration specified in Settings, and moving it to Previous, along with information added to it by bidders._
+* _This state plan is subject to change, depending on intricacies with Firebase and Redux. Some state may be moved locally, or perhaps all state will be stored offsite._
 
 ### Setup/Installation Requirements
 * Open your preferred browser

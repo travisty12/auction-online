@@ -1,12 +1,14 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import CheckKey from './CheckKey';
+import {connect} from 'react-redux';
+import {changeJoinView} from './../actions';
 
-function Join(){
+function Join(props){
   let keyChecker = null;
-  let clicked = false;
+  const {dispatch} = props;
   function buttonClick() {
-    clicked = true;
+    dispatch(changeJoinView());
   }
   const ButtonStyle = {
     backgroundColor: 'red',
@@ -14,7 +16,7 @@ function Join(){
     padding: '5px',
     color: 'white'
   };
-  if (clicked) {
+  if (props.joinView) {
     keyChecker = <button style={ButtonStyle} onClick={() => buttonClick()}>Join Room</button>;
   } else {
     keyChecker = <CheckKey />;
@@ -26,7 +28,13 @@ function Join(){
   );
 }
 
-// Join.propTypes = {
+const mapStateToProps = state => {
+  return {
+    joinView: state.joinView
+  };
+};
+
+// Create.propTypes = {
 // };
 
-export default Join;
+export default connect(mapStateToProps)(Join);

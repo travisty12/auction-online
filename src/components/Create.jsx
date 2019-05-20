@@ -1,12 +1,15 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Register from './Register';
+import { changeView } from './../actions';
 
-function Create(){
+function Create(props){
   let register = null;
   let clicked = false;
+  const { dispatch } = props;
   function buttonClick() {
-    clicked = true;
+    dispatch(changeView());
   }
   const ButtonStyle = {
     backgroundColor: 'red',
@@ -14,7 +17,7 @@ function Create(){
     padding: '5px',
     color: 'white'
   };
-  if (clicked) {
+  if (props.registerView) {
     register = <button style={ButtonStyle} onClick={() => buttonClick()}>Create Room</button>;
   } else {
     register = <Register />;
@@ -26,7 +29,13 @@ function Create(){
   );
 }
 
+const mapStateToProps = state => {
+  return {
+    registerView: state.registerView
+  };
+};
+
 // Create.propTypes = {
 // };
 
-export default Create;
+export default connect(mapStateToProps)(Create);

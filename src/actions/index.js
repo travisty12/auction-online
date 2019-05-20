@@ -19,6 +19,12 @@ export function addRoom(_items, _time, _min, _tpi) {
   });
 }
 
+export function addItems(roomKey, _items) {
+  return () => rooms[roomKey].push({
+    items: _items
+  });
+}
+
 export function watchFirebaseRoomsRef() {
   return function(dispatch) {
     rooms.on('child_added', data => {
@@ -28,6 +34,20 @@ export function watchFirebaseRoomsRef() {
       console.log(newRoom);
     });
   };
+}
+
+export const changeView = () => ({
+  type: c.CHANGE_VIEW
+});
+
+export const changeJoinView = () => ({
+  type: c.CHANGE_JOIN_VIEW
+});
+
+export function checkRoom(email){
+  let regexEmail = /[.]*@/
+  type: c.CHECK_ROOM,
+  email
 }
 
 export const addItem = (item) => ({

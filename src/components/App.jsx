@@ -7,13 +7,9 @@ import Header from './Header';
 import Settings from './Settings';
 import ItemList from './ItemList';
 import Error404 from './Error404';
-import { connect } from 'react-redux';
 import * as actions from './../actions';
 
 function App() {
-    // const { dispatch } = props;
-    // const { watchFirebaseRoomsRef } = actions;
-    // dispatch(watchFirebaseRoomsRef());
   return (
     <div className="mainContainer">
       <style jsx>{`

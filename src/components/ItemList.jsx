@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import NewItem from './NewItem';
 import { Link } from 'react-router-dom';
+import {connect} from 'react-redux';
+import * as actions from './../actions';
 
 function ItemList(props){
   const minBid = 5;
@@ -31,7 +33,12 @@ function ItemList(props){
     justifyContent: 'space-between',
     alignItems: 'center'
   }
-
+  const { dispatch } = props;
+  const { watchFirebaseRoomsRef, addRoom } = actions;
+  dispatch(watchFirebaseRoomsRef());
+  function handleAddItems() {
+    dispatch(addRoom(['thing1','thing2'],"5pm",10,30));
+  }
   return (
     <div>
       <NewItem />
@@ -39,8 +46,10 @@ function ItemList(props){
         <div style={ItemListStyle} key={index}>
           <h3>{index}: - {item.item}</h3>
           <h3>Minimum bid: ${item.bid}</h3>
+          <button>Remove</button>
         </div>
       )}
+      <button onClick={() => handleAddItems()}>Confirm Items</button>
     </div>
   );
 }
@@ -48,4 +57,4 @@ function ItemList(props){
 ItemList.propTypes = {
 };
 
-export default ItemList;
+export default connect()(ItemList);

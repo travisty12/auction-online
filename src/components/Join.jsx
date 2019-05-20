@@ -1,9 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import CheckKey from './CheckKey';
-import { Link } from 'react-router-dom';
 
-function Join(props){
+function Join(){
   let keyChecker = null;
   let clicked = false;
   function buttonClick() {
@@ -14,20 +13,20 @@ function Join(props){
     border: 'none',
     padding: '5px',
     color: 'white'
-  }
+  };
   if (clicked) {
     keyChecker = <button style={ButtonStyle} onClick={() => buttonClick()}>Join Room</button>;
   } else {
-    keyChecker = <CheckKey />
+    keyChecker = <CheckKey />;
   }
   return (
     <div>
       {keyChecker}
     </div>
-  )
+  );
 }
 
-Join.propTypes = {
-};
+// Join.propTypes = {
+// };
 
 export default Join;

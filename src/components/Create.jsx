@@ -13,17 +13,17 @@ function Create(){
     border: 'none',
     padding: '5px',
     color: 'white'
-  }
+  };
   if (clicked) {
     register = <button style={ButtonStyle} onClick={() => buttonClick()}>Create Room</button>;
   } else {
-    register = <Register />
+    register = <Register />;
   }
   return (
     <div>
       {register}
     </div>
-  )
+  );
 }
 
 // Create.propTypes = {

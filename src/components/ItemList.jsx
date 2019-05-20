@@ -1,29 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import NewItem from './NewItem';
-import { Link } from 'react-router-dom';
 import {connect} from 'react-redux';
 import * as actions from './../actions';
 
 function ItemList(props){
-  const minBid = 5;
-  let masterItemList = [
-    {
-      item: 'Item1',
-      bid: minBid,
-      bidder: 'bidder1'
-    },
-    {
-      item: 'Item2',
-      bid: minBid,
-      bidder: 'bidder2'
-    },
-    {
-      item: 'Item3',
-      bid: minBid,
-      bidder: 'bidder3'
-    },
-  ];
 
   const ItemListStyle = {
     backgroundColor: 'lightgrey',
@@ -32,12 +13,12 @@ function ItemList(props){
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center'
-  }
+  };
   const { dispatch } = props;
   const { watchFirebaseRoomsRef, addRoom } = actions;
   dispatch(watchFirebaseRoomsRef());
   function handleAddItems() {
-    dispatch(addRoom(['thing1','thing2'],"5pm",10,30));
+    dispatch(addRoom(['thing1','thing2'],'5pm',10,30));
   }
   return (
     <div>
@@ -56,10 +37,12 @@ function ItemList(props){
 const mapStateToProps = state => {
   return {
     newItem: state.newItem
-  }
-}
+  };
+};
 
 ItemList.propTypes = {
+  newItem: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.oneOfType([PropTypes.number,PropTypes.string]))),
+  dispatch: PropTypes.func
 };
 
 export default connect(mapStateToProps)(ItemList);

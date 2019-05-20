@@ -1,13 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import Join from './Join';
 import Create from './Create';
-import { Link } from 'react-router-dom';
 
-function Landing(props){
+function Landing(){
   return (
     <div className="landing">
-    <style jsx>{`
+      <style jsx>{`
       .landing {
         height: 90%;
         width: 90%;
@@ -29,7 +28,7 @@ function Landing(props){
   );
 }
 
-Landing.propTypes = {
-};
+// Landing.propTypes = {
+// };
 
 export default Landing;

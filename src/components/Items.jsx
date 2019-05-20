@@ -1,10 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+// import PropTypes from 'prop-types';
 import Previous from './Previous';
 import Current from './Current';
 
-function Items(props){
+function Items(){
 
   const minBid = 5;
 
@@ -31,7 +30,7 @@ function Items(props){
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    
+
   };
 
   return (
@@ -42,7 +41,7 @@ function Items(props){
   );
 }
 
-Items.propTypes = {
-};
+// Items.propTypes = {
+// };
 
 export default Items;

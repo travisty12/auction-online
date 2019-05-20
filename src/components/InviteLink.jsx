@@ -1,8 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+// import PropTypes from 'prop-types';
 
-function InviteLink(props){
+function InviteLink(){
   const InviteLinkStyle = {
     backgroundColor: '#800000',
     color: 'white',
@@ -16,7 +15,7 @@ function InviteLink(props){
   );
 }
 
-InviteLink.propTypes = {
-};
+// InviteLink.propTypes = {
+// };
 
 export default InviteLink;

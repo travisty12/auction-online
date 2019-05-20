@@ -1,8 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+// import PropTypes from 'prop-types';
 
-function Current(props){
+function Current(){
   const minBid = 5;
   const exampleItem = {
     item: 'Item1',
@@ -40,7 +39,7 @@ function Current(props){
   );
 }
 
-Current.propTypes = {
-};
+// Current.propTypes = {
+// };
 
 export default Current;

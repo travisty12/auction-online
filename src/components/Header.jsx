@@ -1,15 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import Back from './Back';
-import { Link } from 'react-router-dom';
 
-function Header(props){
+function Header(){
   const HeaderStyle = {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around'
-  }
+  };
   return (
     <div style={HeaderStyle}>
       <Back />
@@ -19,7 +18,7 @@ function Header(props){
   );
 }
 
-Header.propTypes = {
-};
+// Header.propTypes = {
+// };
 
 export default Header;

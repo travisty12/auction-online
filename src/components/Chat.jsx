@@ -1,16 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+// import PropTypes from 'prop-types';
 import MessageList from './MessageList';
 import Compose from './Compose';
 
-function Chat(props){
+function Chat(){
   const ChatStyle = {
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center'
-  }
+  };
   return (
     <div style ={ChatStyle}>
       <MessageList />
@@ -19,7 +18,7 @@ function Chat(props){
   );
 }
 
-Chat.propTypes = {
-};
+// Chat.propTypes = {
+// };
 
 export default Chat;

@@ -1,9 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import Register from './Register';
-import { Link } from 'react-router-dom';
 
-function Create(props){
+function Create(){
   let register = null;
   let clicked = false;
   function buttonClick() {
@@ -27,7 +26,7 @@ function Create(props){
   )
 }
 
-Create.propTypes = {
-};
+// Create.propTypes = {
+// };
 
 export default Create;

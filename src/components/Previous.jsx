@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
 function Previous(props){
   let previous = null;
@@ -44,10 +43,11 @@ function Previous(props){
     <div style={PreviousStyle}>
       {previous}
     </div>
-  )
+  );
 }
 
 Previous.propTypes = {
+  itemList: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number,PropTypes.string])))
 };
 
 export default Previous;

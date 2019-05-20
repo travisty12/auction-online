@@ -1,27 +1,39 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import * as actions from './../actions';
 
 function NewItem(props){
   const NewItemStyle = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+  };
+  let _name = null;
+  const { addItem } = actions;
+  function handleSubmitNewItem(event) {
+    event.preventDefault();
+    const { dispatch } = props;
+    dispatch(addItem(_name.value));
+    _name.value = '';
   }
   return (
     <div>
-      <form style = {NewItemStyle}>
+      <form onSubmit={handleSubmitNewItem} style = {NewItemStyle}>
         <h3>Item to add:</h3>
-        <input placeholder='item name...' />
-        <h4>Minimum bid (optional):</h4>
-        <input placeholder='0' />
-        <button>Add</button>
+        <input
+          type='text'
+          id='name'
+          placeholder='item name...'
+          ref={(input) => {_name = input;}}/>
+        <button type='submit'>Add</button>
       </form>
     </div>
   );
 }
 
 NewItem.propTypes = {
+  dispatch: PropTypes.func
 };
 
-export default NewItem;
+export default connect()(NewItem);

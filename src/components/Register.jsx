@@ -1,8 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-function Register(props){
+function Register(){
   const ButtonStyle = {
     backgroundColor: 'red',
     border: 'none',
@@ -13,7 +13,7 @@ function Register(props){
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-  }
+  };
   return (
     <div style={RegisterStyle}>
       <h3>Enter your email to recieve a room key:</h3>
@@ -24,7 +24,7 @@ function Register(props){
 
 }
 
-Register.propTypes = {
-};
+// Register.propTypes = {
+// };
 
 export default Register;

@@ -1,7 +1,7 @@
 import constants from './../constants';
 const { c } = constants;
 const { firebaseConfig } = constants;
-import v4 from 'uuid/v4';
+// import v4 from 'uuid/v4';
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
@@ -22,10 +22,18 @@ export function addRoom(_items, _time, _min, _tpi) {
 export function watchFirebaseRoomsRef() {
   return function(dispatch) {
     rooms.on('child_added', data => {
-      console.log(data.val());
+      const newRoom = Object.assign({}, data.val(), {
+        id: data.getKey()
+      });
+      console.log(newRoom);
     });
   };
 }
+
+export const addItem = (item) => ({
+  type: c.ADD_ITEM,
+  item
+});
 
 export const registerRoom = (email) => ({
   type: c.REGISTER_ROOM,

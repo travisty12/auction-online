@@ -4,20 +4,17 @@ const { c } = constants;
 export default (state = [
   {
     item: 'example1',
-    bid: 1,
-    bidder: 'bidder1'
   },
   {
     item: 'example2',
-    bid: 5,
-    bidder: 'bidder2'
   },
 ], action) => {
   let newState;
-  const exampleKey = 'test';
   switch(action.type) {
-  case c.CHECK_KEY:
-    newState = action.key === exampleKey;
+  case c.ADD_ITEM:
+    newState = state.slice();
+    newState.push({
+      item: action.item});
     return newState;
   default:
     return state;

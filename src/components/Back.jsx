@@ -1,8 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-function Back(props){
+function Back(){
   return (
     <div>
       <h4><Link to='/'>Back</Link></h4>
@@ -10,7 +10,7 @@ function Back(props){
   );
 }
 
-Back.propTypes = {
-};
+// Back.propTypes = {
+// };
 
 export default Back;

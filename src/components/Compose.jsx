@@ -1,18 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+// import PropTypes from 'prop-types';
 
-function Compose(props){
+function Compose(){
   const ComposeStyle = {
     width: '100%',
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between'
-  }
+  };
   const InputStyle = {
     width: '100%'
-  }
+  };
   return (
     <div style={ComposeStyle}>
       <input style={InputStyle} />
@@ -21,7 +20,7 @@ function Compose(props){
   );
 }
 
-Compose.propTypes = {
-};
+// Compose.propTypes = {
+// };
 
 export default Compose;

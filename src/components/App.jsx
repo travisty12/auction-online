@@ -7,7 +7,6 @@ import Header from './Header';
 import Settings from './Settings';
 import ItemList from './ItemList';
 import Error404 from './Error404';
-import * as actions from './../actions';
 
 function App() {
   return (

@@ -1,8 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-function CheckKey(props){
+function CheckKey(){
   const ButtonStyle = {
     backgroundColor: 'red',
     border: 'none',
@@ -24,7 +24,7 @@ function CheckKey(props){
 
 }
 
-CheckKey.propTypes = {
-};
+// CheckKey.propTypes = {
+// };
 
 export default CheckKey;

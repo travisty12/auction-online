@@ -1,10 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+// import PropTypes from 'prop-types';
 import MinBid from './MinBid';
 import TimePerItem from './TimePerItem';
 
-function BidInfo(props){
+function BidInfo(){
   const ButtonStyle = {
     backgroundColor: '#800000',
     color: 'white',
@@ -16,7 +15,7 @@ function BidInfo(props){
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-  }
+  };
   let clicked = false;
   let biddingSetup = null;
   function buttonClick() {
@@ -25,7 +24,7 @@ function BidInfo(props){
   if (!clicked) {
     biddingSetup = <button style={ButtonStyle} onClick={() => buttonClick()}>Set bid specs</button>;
   } else {
-    biddingSetup = <div style={BidInfoStyle}><MinBid /><TimePerItem /><button style={ButtonStyle}>Submit</button></div>
+    biddingSetup = <div style={BidInfoStyle}><MinBid /><TimePerItem /><button style={ButtonStyle}>Submit</button></div>;
   }
   return (
     <div>
@@ -34,7 +33,7 @@ function BidInfo(props){
   );
 }
 
-BidInfo.propTypes = {
-};
+// BidInfo.propTypes = {
+// };
 
 export default BidInfo;

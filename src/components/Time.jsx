@@ -1,8 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+// import PropTypes from 'prop-types';
+// import { Link } from 'react-router-dom';
 
-function Time(props){
+function Time(){
   const TimeStyle = {
     backgroundColor: '#800000',
     color: 'white',
@@ -23,7 +23,7 @@ function Time(props){
   if (!clicked) {
     timeSetup = <button style={TimeStyle} onClick={() => buttonClick()}>Set time</button>;
   } else {
-    timeSetup = <div style={DivStyle} ><h3>Set auction time:</h3><input type="datetime-local" /><button style={TimeStyle}>Submit</button></div>
+    timeSetup = <div style={DivStyle} ><h3>Set auction time:</h3><input type="datetime-local" /><button style={TimeStyle}>Submit</button></div>;
   }
   return (
     <div>
@@ -32,7 +32,7 @@ function Time(props){
   );
 }
 
-Time.propTypes = {
-};
+// Time.propTypes = {
+// };
 
 export default Time;

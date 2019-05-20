@@ -1,12 +1,10 @@
 import React from 'react';
 import InviteLink from './InviteLink';
-import Settings from './Settings';
 import AddItems from './AddItems';
-import Back from './Back';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
-function Setup(props){
+function Setup(){
   const SetupStyle = {
     display: 'flex',
     height: '90%',
@@ -31,7 +29,7 @@ function Setup(props){
   );
 }
 
-Setup.propTypes = {
-};
+// Setup.propTypes = {
+// };
 
 export default Setup;

@@ -1,10 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import ItemList from './ItemList';
-import NewItem from './NewItem';
 
-function AddItems(props){
+function AddItems(){
   const AddItemsStyle = {
     backgroundColor: '#800000',
     color: 'white',
@@ -15,7 +13,6 @@ function AddItems(props){
     textDecoration: 'none',
   };
   let addItemsContents = <Link to='/additems' style={LinkStyle}><h1 style={AddItemsStyle}>Add Items</h1></Link>;
-  let list = <ItemList />;
 
   return (
     <div>
@@ -24,7 +21,7 @@ function AddItems(props){
   );
 }
 
-AddItems.propTypes = {
-};
+// AddItems.propTypes = {
+// };
 
 export default AddItems;

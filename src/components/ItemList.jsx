@@ -42,10 +42,9 @@ function ItemList(props){
   return (
     <div>
       <NewItem />
-      {masterItemList.map((item, index) =>
+      {props.newItem.map((item, index) =>
         <div style={ItemListStyle} key={index}>
           <h3>{index}: - {item.item}</h3>
-          <h3>Minimum bid: ${item.bid}</h3>
           <button>Remove</button>
         </div>
       )}
@@ -54,7 +53,13 @@ function ItemList(props){
   );
 }
 
+const mapStateToProps = state => {
+  return {
+    newItem: state.newItem
+  }
+}
+
 ItemList.propTypes = {
 };
 
-export default connect()(ItemList);
+export default connect(mapStateToProps)(ItemList);

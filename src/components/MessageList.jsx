@@ -1,10 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import Message from './Message';
 import Moment from 'moment';
-import { Link } from 'react-router-dom';
 
-function MessageList(props){
+function MessageList(){
 
   let masterMessageList = [
     {
@@ -31,7 +30,7 @@ function MessageList(props){
     padding: '2px',
     backgroundColor: 'grey',
     width: '100%'
-  }
+  };
 
   return (
     <div style={MessageListStyle}>
@@ -42,7 +41,7 @@ function MessageList(props){
   );
 }
 
-MessageList.propTypes = {
-};
+// MessageList.propTypes = {
+// };
 
 export default MessageList;

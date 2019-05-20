@@ -1,8 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+// import PropTypes from 'prop-types';
 
-function TimePerItem(props){
+function TimePerItem(){
   const TimePerItemStyle = {
     display: 'flex'
   };
@@ -28,7 +27,7 @@ function TimePerItem(props){
   );
 }
 
-TimePerItem.propTypes = {
-};
+// TimePerItem.propTypes = {
+// };
 
 export default TimePerItem;

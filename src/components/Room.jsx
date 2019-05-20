@@ -1,11 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import Items from './Items';
 import Chat from './Chat';
-import Back from './Back';
-import { Link } from 'react-router-dom';
 
-function Room(props){
+function Room(){
   const RoomStyle = {
     width: '100%',
     height: '90%',
@@ -13,7 +11,7 @@ function Room(props){
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'space-between'
-  }
+  };
   return (
     <div style={RoomStyle}>
       <Items />
@@ -22,7 +20,7 @@ function Room(props){
   );
 }
 
-Room.propTypes = {
-};
+// Room.propTypes = {
+// };
 
 export default Room;

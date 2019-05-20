@@ -1,10 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+// import PropTypes from 'prop-types';
 import Time from './Time';
 import BidInfo from './BidInfo';
 
-function Settings(props){
+function Settings(){
   const SettingsStyle = {
     height: '90%',
     display: 'flex',
@@ -21,7 +20,7 @@ function Settings(props){
   );
 }
 
-Settings.propTypes = {
-};
+// Settings.propTypes = {
+// };
 
 export default Settings;

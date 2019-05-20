@@ -1,4 +1,5 @@
-import c from './../constants';
+import constants from './../constants';
+const { c } = constants;
 
 export default (state = null, action) => {
   let newState;

@@ -7,22 +7,13 @@ import Header from './Header';
 import Settings from './Settings';
 import ItemList from './ItemList';
 import Error404 from './Error404';
+import { connect } from 'react-redux';
+import * as actions from './../actions';
 
-function App(){
-  let marginWidth;
-  let marginTop;
-  function updateMargin() {
-    if (window.innerWidth > 1000) {
-      marginWidth = `calc((100vw - 900px) / 2)`;
-    } else {
-      marginWidth = `10vw`;
-    }
-  }
-  updateMargin();
-  window.addEventListener('resize', function() {
-      updateMargin();
-    }, true);
-
+function App() {
+    // const { dispatch } = props;
+    // const { watchFirebaseRoomsRef } = actions;
+    // dispatch(watchFirebaseRoomsRef());
   return (
     <div className="mainContainer">
       <style jsx>{`
@@ -33,10 +24,15 @@ function App(){
           width: 80vw;
           max-width: 900px;
           height: 90vh;
+          margin-left: calc((100vw - 900px) / 2);
           margin-top: 5vh;
-          margin-left: ${marginWidth};
           margin-right: auto;
           box-shadow: 5px 5px 5px 2px rgba(0,0,0,0.3);
+        }
+        @media screen and (max-width: 1000px) {
+          .mainContainer {
+            margin-left: 10vw;
+          }
         }
         `}</style>
       <style global jsx>{`

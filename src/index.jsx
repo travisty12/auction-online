@@ -4,11 +4,10 @@ import App from './components/App';
 import { HashRouter } from 'react-router-dom';
 import thunkMiddleware from 'redux-thunk';
 import { createStore, applyMiddleware } from 'redux';
-import middlewareLogger from './middleware/middleware-logger';
 import rootReducer from './reducers/index-reducer';
 import { Provider } from 'react-redux';
 
-const store = createStore(rootReducer, applyMiddleware(middlewareLogger, thunkMiddleware));
+const store = createStore(rootReducer, applyMiddleware(thunkMiddleware));
 
 let unsubscribe = store.subscribe(() =>
   console.log(store.getState())

@@ -9,11 +9,14 @@ function NewItem(props){
     alignItems: 'center',
   }
   return (
-    <div style = {NewItemStyle}>
-      <h3>Item to add:</h3>
-      <input placeholder='item name...' />
-      <h4>Minimum bid (optional):</h4>
-      <input placeholder='0' />
+    <div>
+      <form style = {NewItemStyle}>
+        <h3>Item to add:</h3>
+        <input placeholder='item name...' />
+        <h4>Minimum bid (optional):</h4>
+        <input placeholder='0' />
+        <button>Add</button>
+      </form>
     </div>
   );
 }

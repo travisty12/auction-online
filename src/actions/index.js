@@ -31,6 +31,7 @@ export function watchFirebaseRoomsRef() {
       const newRoom = Object.assign({}, data.val(), {
         id: data.getKey()
       });
+      const room = firebase.database().ref().child('rooms')
       console.log(newRoom);
     });
   };
@@ -44,10 +45,10 @@ export const changeJoinView = () => ({
   type: c.CHANGE_JOIN_VIEW
 });
 
-export function checkRoom(email){
-  let regexEmail = /[.]*@/
-  type: c.CHECK_ROOM,
-  email
+export function checkRoom(email) {
+
+  const action = {type: c.CHECK_ROOM,
+  email}
 }
 
 export const addItem = (item) => ({
@@ -60,7 +61,10 @@ export const registerRoom = (email) => ({
   email
 });
 
-export const checkKey = (key) => ({
-  type: c.CHECK_KEY,
-  key
-});
+export function checkKey(key) {
+  firebase.database().ref().child('rooms').forEach((room) => {
+    if (room.id === key) {
+
+    }
+  });
+};

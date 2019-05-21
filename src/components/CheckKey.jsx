@@ -1,8 +1,9 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-
-function CheckKey(){
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
+import { checkRoom } from './../actions';
+function CheckKey(props){
+  const { dispatch } = props;
   const ButtonStyle = {
     backgroundColor: '#800000',
     border: 'none',
@@ -16,17 +17,36 @@ function CheckKey(){
     flexDirection: 'column',
     alignItems: 'center',
   };
+  let _key = null;
+  function keyChecker() {
+    console.log(_key.value);
+    dispatch(checkRoom(_key.value));
+    // <Link to="/room"></Link>
+  }
+  let renderRedirect = null;
+  if (props.roomBuilt) {
+    renderRedirect = <Redirect to='/room' />;
+  } else {
+    renderRedirect = null;
+  }
   return (
-    <div style={CheckKeyStyle}>
+    <form onSubmit={keyChecker} style={CheckKeyStyle}>
       <h3>Enter the room's key:</h3>
-      <input />
-      <Link to="/room"><button style={ButtonStyle} >Submit</button></Link>
-    </div>
+      <input ref={(input) => {_key = input;}} />
+      <button type='submit' style={ButtonStyle} >Submit</button>
+      {renderRedirect}
+    </form>
   );
 
 }
 
+const mapStateToProps = state => {
+  return {
+    roomBuilt: state.roomBuilt
+  };
+};
+
 // CheckKey.propTypes = {
 // };
 
-export default CheckKey;
+export default connect(mapStateToProps)(CheckKey);

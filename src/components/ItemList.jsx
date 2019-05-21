@@ -15,8 +15,7 @@ function ItemList(props){
     alignItems: 'center'
   };
   const { dispatch } = props;
-  const { watchFirebaseRoomsRef, addRoom } = actions;
-  dispatch(watchFirebaseRoomsRef());
+  const { addRoom } = actions;
   function handleAddItems() {
     dispatch(addRoom(['thing1','thing2'],'5pm',10,30));
   }

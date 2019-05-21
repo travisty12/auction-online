@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import {checkRoom, registerRoom,resetMain} from './../actions';
 
 function Register(props){
   const ButtonStyle = {
@@ -14,26 +15,33 @@ function Register(props){
     flexDirection: 'column',
     alignItems: 'center',
   };
-  let _email = null;
+  let _key = null;
   const { dispatch } = props;
-  function onSubmitEmail(event) {
+  function onSubmitKey(event) {
     event.preventDefault();
-    dispatch(checkRoom(_email));
-
+    if (_key.value) {
+      dispatch(checkRoom(_key.value));
+    } else {
+      dispatch(registerRoom());
+    }
   }
   let renderRedirect = null;
+  // dispatch(resetMain());
   if (props.roomBuilt) {
     renderRedirect = <Redirect to='/setup' />;
+  } else {
+    renderRedirect = null;
   }
   return (
-    <form onSubmit={() => onSubmitEmail} style={RegisterStyle}>
-      <h3>Enter your email to recieve your room key (OPTIONAL):</h3>
+    <form onSubmit={() => onSubmitKey(event)} style={RegisterStyle}>
+      <h3>Create a new auction room now!</h3>
+      <h5>Already made a room? Enter your key to edit (OPTIONAL):</h5>
       <input
         type='text'
-        id='email'
-        placeholder='example@site.com'
-        ref={(input) => {_email = input;}}/>
-      <button style={ButtonStyle} type='submit'>Submit</button>
+        id='key'
+        placeholder='optional key'
+        ref={(input) => {_key = input;}}/>
+      <button style={ButtonStyle} type='submit'>Go!</button>
       {renderRedirect}
     </form>
   );

@@ -1,14 +1,12 @@
 import constants from './../constants';
 const { c } = constants;
 
-export default (state = false, action) => {
+export default (state = true, action) => {
   let newState;
   switch(action.type) {
-  case c.CHECK_ROOM:
+  case c.CHANGE_PREVIOUS_VIEW:
     newState = !state;
     return newState;
-  case c.RESET_MAIN:
-    return false;
   default:
     return state;
   }

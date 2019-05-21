@@ -1,11 +1,17 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import {connect} from 'react-redux';
+import { resetMain } from './../actions';
 
-function Back(){
+function Back(props){
+  const {dispatch} = props
+  function resetMainPage() {
+    dispatch(resetMain());
+  }
   return (
     <div>
-      <h4><Link to='/'>Back</Link></h4>
+      <h4 onClick={resetMainPage()}><Link to='/'>Back</Link></h4>
     </div>
   );
 }
@@ -13,4 +19,4 @@ function Back(){
 // Back.propTypes = {
 // };
 
-export default Back;
+export default connect()(Back);

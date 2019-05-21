@@ -5,6 +5,7 @@ import itemListReducer from './item-list-reducer';
 import newItemReducer from './new-item-reducer';
 import registerViewReducer from './register-view-reducer';
 import joinViewReducer from './join-view-reducer';
+import previousViewReducer from './previous-view-reducer';
 import roomBuiltReducer from './room-built-reducer';
 
 const rootReducer = combineReducers({
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   validKey: validKeyReducer,
   newItem: newItemReducer,
   registerView: registerViewReducer,
+  previousView: previousViewReducer,
   joinView: joinViewReducer,
   roomBuilt: roomBuiltReducer,
 });

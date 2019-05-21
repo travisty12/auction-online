@@ -1,11 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
+import {changePreviousView} from './../actions';
 
 function Previous(props){
   let previous = null;
   let clicked = false;
+  const {dispatch} = props;
   function buttonClick() {
-    clicked = true;
+    dispatch(changePreviousView());
   }
   const ButtonStyle = {
     backgroundColor: 'red',
@@ -26,10 +29,10 @@ function Previous(props){
     justifyContent: 'space-between',
     alignItems: 'center'
   };
-  if (!clicked) {
+  if (props.previousView) {
     previous = <button style={ButtonStyle} onClick={() => buttonClick()}>Previous Items</button>;
   } else {
-    previous = <div>{props.itemList.map((item, index) =>
+    previous = <div><h3 onClick={() => buttonClick()}>Close</h3>{props.itemList.map((item, index) =>
       <div style={PreviousListStyle} key={index}>
         <div>
           <h3>{item.item}</h3>
@@ -46,8 +49,14 @@ function Previous(props){
   );
 }
 
-Previous.propTypes = {
-  itemList: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number,PropTypes.string])))
+const mapStateToProps = state => {
+  return {
+    previousView: state.previousView
+  };
 };
 
-export default Previous;
+Previous.propTypes = {
+  itemList: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.oneOfType([PropTypes.number,PropTypes.string])))
+};
+
+export default connect(mapStateToProps)(Previous);

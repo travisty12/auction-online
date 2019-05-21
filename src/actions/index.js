@@ -31,8 +31,9 @@ export function watchFirebaseRoomsRef() {
       const newRoom = Object.assign({}, data.val(), {
         id: data.getKey()
       });
-      const room = firebase.database().ref().child('rooms')
+      const room = firebase.default.database().ref().child('rooms')
       console.log(newRoom);
+      console.log(room);
     });
   };
 }
@@ -45,10 +46,29 @@ export const changeJoinView = () => ({
   type: c.CHANGE_JOIN_VIEW
 });
 
-export function checkRoom(email) {
+export const changePreviousView = () => ({
+  type: c.CHANGE_PREVIOUS_VIEW
+});
 
-  const action = {type: c.CHECK_ROOM,
-  email}
+export const roomChecker = (key) => ({
+  type: c.CHECK_ROOM,
+  key
+});
+
+export function checkRoom(key) {
+
+  return function(dispatch) {
+    firebase.default.database().ref().child("rooms").on("value", function(snapshot) {
+      if (snapshot.child(key)) {
+        console.log(snapshot.child(key));
+        console.log("yes");
+        return dispatch(roomChecker(key));
+      } else {
+        console.log("no");
+      }
+      return;
+    });
+  }
 }
 
 export const addItem = (item) => ({
@@ -56,10 +76,28 @@ export const addItem = (item) => ({
   item
 });
 
-export const registerRoom = (email) => ({
-  type: c.REGISTER_ROOM,
-  email
-});
+export const resetMain = () => ({
+  type: c.RESET_MAIN
+})
+
+export function registerRoom() {
+  return (dispatch) => {
+    rooms.push({ active: false, });
+    rooms.on('child_added', data => {
+      // console.log(data);
+      const newRoom = Object.assign({}, data.val(), {
+        id: data.getKey()
+      });
+      const room = firebase.default.database().ref().child('rooms');
+      // console.log(newRoom);
+      // console.log(room);
+      firebase.default.database().ref('rooms/' + data.getKey()).set({
+        id: data.getKey()
+      });
+      dispatch(roomChecker(data.getKey()));
+    });
+  }
+};
 
 export function checkKey(key) {
   firebase.database().ref().child('rooms').forEach((room) => {

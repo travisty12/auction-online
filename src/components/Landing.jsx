@@ -2,8 +2,13 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import Join from './Join';
 import Create from './Create';
+import { connect } from 'react-redux';
+import * as actions from './../actions';
 
-function Landing(){
+function Landing(props){
+  const { dispatch } = props;
+  const { watchFirebaseRoomsRef } = actions;
+  dispatch(watchFirebaseRoomsRef());
   return (
     <div className="landing">
       <style jsx>{`
@@ -31,4 +36,4 @@ function Landing(){
 // Landing.propTypes = {
 // };
 
-export default Landing;
+export default connect()(Landing);

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { checkRoom } from './../actions';
+import { checkRoom, changeJoinView } from './../actions';
 function CheckKey(props){
   const { dispatch } = props;
   const ButtonStyle = {
@@ -21,6 +21,7 @@ function CheckKey(props){
   function keyChecker() {
     console.log(_key.value);
     dispatch(checkRoom(_key.value));
+    dispatch(changeJoinView());
     // <Link to="/room"></Link>
   }
   let renderRedirect = null;
@@ -42,7 +43,7 @@ function CheckKey(props){
 
 const mapStateToProps = state => {
   return {
-    roomBuilt: state.roomBuilt
+    roomBuilt: state.roomBuilt,
   };
 };
 

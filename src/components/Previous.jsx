@@ -21,6 +21,7 @@ function Previous(props){
   const PreviousStyle = {
     width: '100%',
     display: 'flex',
+    flexDirection: 'column',
     justifyContent: 'center'
   };
   const PreviousListStyle = {
@@ -34,7 +35,7 @@ function Previous(props){
   if (props.previousView) {
     previous = <button style={ButtonStyle} onClick={() => buttonClick()}>Previous Items</button>;
   } else {
-    previous = <div><h3 onClick={() => buttonClick()}>Close</h3>{props.itemList.map((item, index) =>
+    previous = <div style={PreviousStyle}><h3 onClick={() => buttonClick()}>Close</h3>{props.itemList.map((item, index) =>
       <div style={PreviousListStyle} key={index}>
         <div>
           <h3>{item.item}</h3>

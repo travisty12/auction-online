@@ -1,9 +1,10 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Previous from './Previous';
 import Current from './Current';
 
-function Items(){
+function Items(props){
 
   const minBid = 5;
 
@@ -36,12 +37,18 @@ function Items(){
   return (
     <div style={ItemsStyle}>
       <Current />
-      <Previous itemList={masterItemList} />
+      <Previous itemList={props.itemList} />
     </div>
   );
 }
 
+const mapStateToProps = state => {
+  return {
+    itemList: state.newItem
+  };
+};
+
 // Items.propTypes = {
 // };
 
-export default Items;
+export default connect(mapStateToProps)(Items);

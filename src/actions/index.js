@@ -22,7 +22,7 @@ export function watchFirebaseRoomsRef() {
       const newRoom = Object.assign({}, data.val(), {
         id: data.getKey()
       });
-      const room = firebase.default.database().ref().child('rooms')
+      const room = firebase.default.database().ref().child('rooms');
       console.log(newRoom);
       console.log(room);
     });

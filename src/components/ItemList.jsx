@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import NewItem from './NewItem';
 import {connect} from 'react-redux';
 import * as actions from './../actions';
+import { Link } from 'react-router-dom';
 
 function ItemList(props){
 
@@ -14,10 +15,25 @@ function ItemList(props){
     justifyContent: 'space-between',
     alignItems: 'center'
   };
+  const ButtonStyle = {
+    backgroundColor: '#800000',
+    color: 'white',
+    padding: '5px',
+    border: 'none',
+    borderRadius: '10px',
+    textDecoration: 'none',
+    fontSize: '2.75rem',
+  };
   const { dispatch } = props;
-  const { addRoom } = actions;
+  const { addToRoom, removeItem } = actions;
   function handleAddItems() {
-    dispatch(addRoom(['thing1','thing2'],'5pm',10,30));
+    dispatch(addToRoom(props.newItem, props.roomBuilt));
+  }
+  function handleRemoveItem(index) {
+    dispatch(removeItem(props.newItem, props.roomBuilt, index));
+  }
+  function returnToSettings() {
+
   }
   return (
     <div>
@@ -25,17 +41,19 @@ function ItemList(props){
       {props.newItem.map((item, index) =>
         <div style={ItemListStyle} key={index}>
           <h3>{index}: - {item.item}</h3>
-          <button>Remove</button>
+          <button onClick={() => handleRemoveItem(index)}>Remove</button>
         </div>
       )}
-      <button onClick={() => handleAddItems()}>Confirm Items</button>
+      <button style={ButtonStyle} onClick={() => handleAddItems()}>Confirm Items</button>
+      <button><Link style={ButtonStyle} to='/setup'>Return</Link></button>
     </div>
   );
 }
 
 const mapStateToProps = state => {
   return {
-    newItem: state.newItem
+    newItem: state.newItem,
+    roomBuilt: state.roomBuilt,
   };
 };
 

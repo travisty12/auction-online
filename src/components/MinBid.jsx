@@ -1,7 +1,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 
-function MinBid(){
+function MinBid(props){
   const MinBidStyle = {
     display: 'flex'
   };
@@ -25,14 +25,15 @@ function MinBid(){
     border: 'none',
     fontSize: '2.75rem',
   };
+  let _bid = null;
   function bidSubmit() {
-    console.log('bid in');
+    props.onMinBidSet(_bid.value);
   }
   return (
     <form onSubmit={bidSubmit} style={ContainerStyle}>
       <h3>Set minimum bid:</h3>
       <div style={MinBidStyle}>
-        <p>$</p><input style={InputStyle} placeholder='0' />
+        <p>$</p><input style={InputStyle} placeholder='0' ref={(input) => {_bid = input}} />
       </div>
       <button type='submit' style={ButtonStyle}>Set</button>
     </form>

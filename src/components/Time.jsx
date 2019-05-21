@@ -13,7 +13,7 @@ class Time extends React.Component{
 
   timeSubmit(time) {
     if (time) {
-      console.log(time);
+      this.props.onTimeSet(time);
     }
   }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 
-function TimePerItem(){
+function TimePerItem(props){
   const TimePerItemStyle = {
     display: 'flex'
   };
@@ -25,14 +25,15 @@ function TimePerItem(){
     border: 'none',
     fontSize: '2.75rem',
   };
+  let _tpi = null;
   function timeSubmit() {
-    console.log('time in');
+    props.onTpiSet(_tpi.value);
   }
   return (
     <form onSubmit={timeSubmit} style={ContainerStyle}>
       <h3>Set time per item:</h3>
       <div style={TimePerItemStyle}>
-        <input style={InputStyle} placeholder='60' /><p> seconds</p>
+        <input style={InputStyle} placeholder='60' ref={(input) => {_tpi = input}} /><p> seconds</p>
       </div>
       <button type='submit' style={ButtonStyle}>Set</button>
     </form>

@@ -10,15 +10,6 @@ firebase.initializeApp(firebaseConfig);
 const rooms = firebase.default.database().ref('rooms');
 console.log(rooms);
 
-export function addRoom(_items, _time, _min, _tpi) {
-  return () => rooms.push({
-    items: _items,
-    time: _time,
-    min: _min,
-    tpi: _tpi
-  });
-}
-
 export function addItems(roomKey, _items) {
   return () => rooms[roomKey].push({
     items: _items
@@ -56,17 +47,42 @@ export const roomChecker = (key) => ({
 });
 
 export function checkRoom(key) {
-
   return function(dispatch) {
-    firebase.default.database().ref().child("rooms").on("value", function(snapshot) {
-      if (snapshot.child(key).val()) {
-        console.log(snapshot.child(key).val());
-        console.log("yes");
-        return dispatch(roomChecker(key));
-      } else {
-        console.log("no");
-      }
-      return;
+    if (key) {
+
+      firebase.default.database().ref().child("rooms").on("value", function(snapshot) {
+        if (snapshot.child(key).val()) {
+          console.log(snapshot.child(key).val());
+          console.log("yes");
+          return dispatch(roomChecker(key));
+        } else {
+          console.log("no");
+        }
+        return;
+      });
+    }
+  }
+}
+
+export const removeIndex = (items, roomId, index) => ({
+  type: c.REMOVE_ITEM,
+  items,
+  roomId,
+  index
+})
+
+export function removeItem(items, roomId, index) {
+  return (dispatch) => {
+    return dispatch(removeIndex(items, roomId, index));
+  }
+}
+
+export function setSettings(roomId, settings) {
+  return () => {
+    firebase.default.database().ref('rooms/' + roomId + '/settings').set({
+      minBid: settings.minBid,
+      time: settings.time,
+      tpi: settings.tpi
     });
   }
 }
@@ -76,9 +92,20 @@ export const addItem = (item) => ({
   item
 });
 
-export const resetMain = () => ({
+export const guardMain = () => ({
   type: c.RESET_MAIN
-})
+});
+
+export const clearLocal = () => ({
+  type: c.CLEAR_ITEMS
+});
+
+export function resetMain() {
+  return (dispatch) => {
+    dispatch(guardMain());
+    dispatch(clearLocal());
+  }
+};
 
 export function registerRoom() {
   return (dispatch) => {
@@ -100,10 +127,8 @@ export function registerRoom() {
   }
 };
 
-export function checkKey(key) {
-  firebase.database().ref().child('rooms').forEach((room) => {
-    if (room.id === key) {
-
-    }
-  });
-};
+export function addToRoom(itemList, roomId) {
+  return (dispatch) => {
+    firebase.default.database().ref('rooms/' + roomId + '/items').set({itemList});
+  }
+}

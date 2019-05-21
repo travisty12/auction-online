@@ -1,18 +1,7 @@
 import constants from './../constants';
 const { c } = constants;
 
-export default (state = [
-  {
-    item: 'example1',
-    bid: 1,
-    bidder: 'bidder1'
-  },
-  {
-    item: 'example2',
-    bid: 5,
-    bidder: 'bidder2'
-  },
-], action) => {
+export default (state = [], action) => {
   let newState;
   const exampleKey = 'test';
   switch(action.type) {

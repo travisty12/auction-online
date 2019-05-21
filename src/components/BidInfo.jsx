@@ -36,7 +36,7 @@ class BidInfo extends React.Component{
     if (!this.state.isShown) {
       biddingSetup = <button style={ButtonStyle} onClick={() => this.setState({isShown: true})}>Set bid specs</button>;
     } else {
-      biddingSetup = <div style={BidInfoStyle}><MinBid /><TimePerItem /></div>;
+      biddingSetup = <div style={BidInfoStyle}><MinBid onMinBidSet = {this.props.onMinBidSet} /><TimePerItem onTpiSet = {this.props.onTpiSet} /></div>;
     }
     return (
       <div>

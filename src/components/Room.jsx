@@ -1,9 +1,10 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import Items from './Items';
 import Chat from './Chat';
 
-function Room(){
+function Room(props){
   const RoomStyle = {
     width: '100%',
     height: '90%',
@@ -12,15 +13,28 @@ function Room(){
     alignItems: 'center',
     justifyContent: 'space-between'
   };
+  let safeguard = null;
+  if (!props.roomBuilt) {
+    safeguard = <Redirect to='/' />
+  } else {
+    safeguard = null;
+  }
   return (
     <div style={RoomStyle}>
+      {safeguard}
       <Items />
       <Chat />
     </div>
   );
 }
 
+const mapStateToProps = state => {
+  return {
+    roomBuilt: state.roomBuilt
+  };
+};
+
 // Room.propTypes = {
 // };
 
-export default Room;
+export default connect(mapStateToProps)(Room);

@@ -6,3 +6,5 @@ export const CHANGE_PREVIOUS_VIEW = 'CHANGE_VIEW';
 export const CHANGE_JOIN_VIEW = 'CHANGE_JOIN_VIEW';
 export const CHECK_ROOM = 'CHECK_ROOM';
 export const RESET_MAIN = 'RESET_MAIN';
+export const REMOVE_ITEM = 'REMOVE_ITEM';
+export const CLEAR_ITEMS = 'CLEAR_ITEMS';

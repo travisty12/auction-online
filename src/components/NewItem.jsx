@@ -17,16 +17,34 @@ function NewItem(props){
     dispatch(addItem(_name.value));
     _name.value = '';
   }
+  const ButtonStyle = {
+    backgroundColor: '#800000',
+    border: 'none',
+    borderRadius: '10px',
+    padding: '5px',
+    color: 'white',
+    fontSize: '2.75rem',
+  };
+  const InputStyle = {
+    width: '100px',
+    backgroundColor: 'transparent',
+    border: '1px dotted black',
+    borderRadius: '20px',
+    textAlign: 'center',
+    padding: '5px 0px 5px 0px',
+    margin: '10px 0 10px 0',
+  };
   return (
     <div>
       <form onSubmit={handleSubmitNewItem} style = {NewItemStyle}>
         <h3>Item to add:</h3>
         <input
+          style={InputStyle}
           type='text'
           id='name'
           placeholder='item name...'
           ref={(input) => {_name = input;}}/>
-        <button type='submit'>Add</button>
+        <button style={ButtonStyle} type='submit'>Add</button>
       </form>
     </div>
   );

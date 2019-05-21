@@ -2,13 +2,16 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import CheckKey from './CheckKey';
 import {connect} from 'react-redux';
-import {changeJoinView} from './../actions';
+import {changeJoinView, changeView} from './../actions';
 
 function Join(props){
   let keyChecker = null;
   const {dispatch} = props;
   function buttonClick() {
     dispatch(changeJoinView());
+    if (!props.registerView) {
+      dispatch(changeView());
+    }
   }
   const ButtonStyle = {
     backgroundColor: '#800000',
@@ -32,7 +35,8 @@ function Join(props){
 
 const mapStateToProps = state => {
   return {
-    joinView: state.joinView
+    joinView: state.joinView,
+    registerView: state.registerView,
   };
 };
 

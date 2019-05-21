@@ -21,7 +21,6 @@ function Register(props){
   const { dispatch } = props;
   function onSubmitKey(event) {
     event.preventDefault();
-    dispatch(changeView());
     if (_key.value) {
       console.log('1');
       dispatch(checkRoom(_key.value));
@@ -31,6 +30,7 @@ function Register(props){
       dispatch(clearLocal());
       dispatch(registerRoom());
     }
+    // dispatch(changeView());
   }
   let renderRedirect = null;
   if (props.roomBuilt) {

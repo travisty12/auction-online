@@ -32,6 +32,9 @@ export function watchFirebaseRoomsRef() {
 export const changeView = () => ({
   type: c.CHANGE_VIEW
 });
+export const setView = () => ({
+  type: c.SET_VIEW
+});
 
 export const changeJoinView = () => ({
   type: c.CHANGE_JOIN_VIEW
@@ -39,6 +42,10 @@ export const changeJoinView = () => ({
 
 export const changePreviousView = () => ({
   type: c.CHANGE_PREVIOUS_VIEW
+});
+
+export const setPreviousView = () => ({
+  type: c.SET_PREVIOUS_VIEW
 });
 
 export const roomChecker = (key) => ({

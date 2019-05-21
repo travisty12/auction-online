@@ -4,9 +4,11 @@ import AddItems from './AddItems';
 import { Link, Redirect } from 'react-router-dom';
 // import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-
+import { setView } from './../actions';
 
 function Setup(props){
+  const { dispatch } = props;
+  dispatch(setView());
   const SetupStyle = {
     display: 'flex',
     height: '90%',

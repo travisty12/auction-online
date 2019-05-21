@@ -2,7 +2,7 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Register from './Register';
-import { changeView } from './../actions';
+import { changeView, changeJoinView } from './../actions';
 
 function Create(props){
   let register = null;
@@ -10,6 +10,9 @@ function Create(props){
   const { dispatch } = props;
   function buttonClick() {
     dispatch(changeView());
+    if (!props.joinView) {
+      dispatch(changeJoinView());
+    }
   }
   const ButtonStyle = {
     backgroundColor: '#800000',
@@ -33,7 +36,8 @@ function Create(props){
 
 const mapStateToProps = state => {
   return {
-    registerView: state.registerView
+    registerView: state.registerView,
+    joinView: state.joinView,
   };
 };
 

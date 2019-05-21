@@ -3,8 +3,11 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import Items from './Items';
 import Chat from './Chat';
-
+import {changeJoinView, setPreviousView} from './../actions';
 function Room(props){
+  const { dispatch } = props;
+  dispatch(changeJoinView());
+  dispatch(setPreviousView());
   const RoomStyle = {
     width: '100%',
     height: '90%',

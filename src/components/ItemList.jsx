@@ -24,6 +24,13 @@ function ItemList(props){
     textDecoration: 'none',
     fontSize: '2.75rem',
   };
+  const PageViewStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    height: '100%',
+  }
   const { dispatch } = props;
   const { addToRoom, removeItem } = actions;
   function handleAddItems() {
@@ -36,14 +43,16 @@ function ItemList(props){
 
   }
   return (
-    <div>
+    <div style={PageViewStyle}>
       <NewItem />
-      {props.newItem.map((item, index) =>
-        <div style={ItemListStyle} key={index}>
-          <h3>{index}: - {item.item}</h3>
-          <button onClick={() => handleRemoveItem(index)}>Remove</button>
-        </div>
-      )}
+      <div>
+        {props.newItem.map((item, index) =>
+          <div style={ItemListStyle} key={index}>
+            <h3>{index}: - {item.item}</h3>
+            <button onClick={() => handleRemoveItem(index)}>Remove</button>
+          </div>
+        )}
+      </div>
       <button style={ButtonStyle} onClick={() => handleAddItems()}>Confirm Items</button>
       <button><Link style={ButtonStyle} to='/setup'>Return</Link></button>
     </div>

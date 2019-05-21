@@ -21,7 +21,7 @@ function CheckKey(props){
   function keyChecker() {
     console.log(_key.value);
     dispatch(checkRoom(_key.value));
-    dispatch(changeJoinView());
+    // dispatch(changeJoinView());
     // <Link to="/room"></Link>
   }
   let renderRedirect = null;

@@ -4,10 +4,12 @@ import { Link } from 'react-router-dom';
 
 function CheckKey(){
   const ButtonStyle = {
-    backgroundColor: 'red',
+    backgroundColor: '#800000',
     border: 'none',
+    borderRadius: '10px',
     padding: '5px',
-    color: 'white'
+    color: 'white',
+    fontSize: '2.75rem',
   };
   const CheckKeyStyle = {
     display: 'flex',

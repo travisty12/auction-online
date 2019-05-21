@@ -59,8 +59,8 @@ export function checkRoom(key) {
 
   return function(dispatch) {
     firebase.default.database().ref().child("rooms").on("value", function(snapshot) {
-      if (snapshot.child(key)) {
-        console.log(snapshot.child(key));
+      if (snapshot.child(key).val()) {
+        console.log(snapshot.child(key).val());
         console.log("yes");
         return dispatch(roomChecker(key));
       } else {
@@ -83,7 +83,7 @@ export const resetMain = () => ({
 export function registerRoom() {
   return (dispatch) => {
     rooms.push({ active: false, });
-    rooms.on('child_added', data => {
+    rooms.endAt().limitToLast(1).on('child_added', data => {
       // console.log(data);
       const newRoom = Object.assign({}, data.val(), {
         id: data.getKey()
@@ -94,7 +94,8 @@ export function registerRoom() {
       firebase.default.database().ref('rooms/' + data.getKey()).set({
         id: data.getKey()
       });
-      dispatch(roomChecker(data.getKey()));
+      console.log(data.getKey());
+      return dispatch(roomChecker(data.getKey()));
     });
   }
 };

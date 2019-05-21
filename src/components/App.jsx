@@ -23,6 +23,9 @@ function App() {
           margin-top: 5vh;
           margin-right: auto;
           box-shadow: 5px 5px 5px 2px rgba(0,0,0,0.3);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
         }
         @media screen and (max-width: 1000px) {
           .mainContainer {

@@ -12,10 +12,12 @@ function Create(props){
     dispatch(changeView());
   }
   const ButtonStyle = {
-    backgroundColor: 'red',
+    backgroundColor: '#800000',
     border: 'none',
+    borderRadius: '10px',
     padding: '5px',
-    color: 'white'
+    color: 'white',
+    fontSize: '2.75rem',
   };
   if (props.registerView) {
     register = <button style={ButtonStyle} onClick={() => buttonClick()}>Create Room</button>;

@@ -11,10 +11,12 @@ function Join(props){
     dispatch(changeJoinView());
   }
   const ButtonStyle = {
-    backgroundColor: 'red',
+    backgroundColor: '#800000',
     border: 'none',
+    borderRadius: '10px',
     padding: '5px',
-    color: 'white'
+    color: 'white',
+    fontSize: '2.75rem',
   };
   if (props.joinView) {
     keyChecker = <button style={ButtonStyle} onClick={() => buttonClick()}>Join Room</button>;

@@ -3,37 +3,47 @@ import React from 'react';
 import MinBid from './MinBid';
 import TimePerItem from './TimePerItem';
 
-function BidInfo(){
-  const ButtonStyle = {
-    backgroundColor: '#800000',
-    color: 'white',
-    padding: '5px',
-    borderRadius: '10px',
-    border: 'none',
-  };
-  const BidInfoStyle = {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  };
-  let clicked = false;
-  let biddingSetup = null;
-  function buttonClick() {
-    clicked = true;
+class BidInfo extends React.Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      isShown: false
+    }
+    this.bidSubmit = this.bidSubmit.bind(this);
   }
-  if (!clicked) {
-    biddingSetup = <button style={ButtonStyle} onClick={() => buttonClick()}>Set bid specs</button>;
-  } else {
-    biddingSetup = <div style={BidInfoStyle}><MinBid /><TimePerItem /><button style={ButtonStyle}>Submit</button></div>;
-  }
-  return (
-    <div>
-      {biddingSetup}
-    </div>
-  );
-}
 
-// BidInfo.propTypes = {
-// };
+  bidSubmit(bid) {
+    if (bid) {
+      console.log(bid);
+    }
+  }
+
+  render() {
+    const ButtonStyle = {
+      backgroundColor: '#800000',
+      color: 'white',
+      padding: '5px',
+      borderRadius: '10px',
+      border: 'none',
+      fontSize: '2.75rem',
+    };
+    const BidInfoStyle = {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+    };
+    let biddingSetup = null;
+    if (!this.state.isShown) {
+      biddingSetup = <button style={ButtonStyle} onClick={() => this.setState({isShown: true})}>Set bid specs</button>;
+    } else {
+      biddingSetup = <div style={BidInfoStyle}><MinBid /><TimePerItem /></div>;
+    }
+    return (
+      <div>
+        {biddingSetup}
+      </div>
+    );
+  }
+}
 
 export default BidInfo;

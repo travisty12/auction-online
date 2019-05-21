@@ -17,13 +17,25 @@ function MinBid(){
     flexDirection: 'column',
     alignItems: 'center',
   };
+  const ButtonStyle = {
+    backgroundColor: '#800000',
+    color: 'white',
+    padding: '5px',
+    borderRadius: '10px',
+    border: 'none',
+    fontSize: '2.75rem',
+  };
+  function bidSubmit() {
+    console.log('bid in');
+  }
   return (
-    <div style={ContainerStyle}>
+    <form onSubmit={bidSubmit} style={ContainerStyle}>
       <h3>Set minimum bid:</h3>
       <div style={MinBidStyle}>
         <p>$</p><input style={InputStyle} placeholder='0' />
       </div>
-    </div>
+      <button type='submit' style={ButtonStyle}>Set</button>
+    </form>
   );
 }
 

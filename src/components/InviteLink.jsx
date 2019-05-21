@@ -1,7 +1,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 
-function InviteLink(){
+function InviteLink(props){
   const InviteLinkStyle = {
     backgroundColor: '#800000',
     color: 'white',
@@ -11,6 +11,7 @@ function InviteLink(){
   return (
     <div style={InviteLinkStyle}>
       <h1>Invite Link</h1>
+      <p>{props.linkId}</p>
     </div>
   );
 }

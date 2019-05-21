@@ -1,14 +1,16 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import {checkRoom, registerRoom,resetMain} from './../actions';
+import {checkRoom, registerRoom} from './../actions';
 
 function Register(props){
   const ButtonStyle = {
-    backgroundColor: 'red',
+    backgroundColor: '#800000',
     border: 'none',
+    borderRadius: '10px',
     padding: '5px',
-    color: 'white'
+    color: 'white',
+    fontSize: '2.75rem',
   };
   const RegisterStyle = {
     display: 'flex',
@@ -26,7 +28,6 @@ function Register(props){
     }
   }
   let renderRedirect = null;
-  // dispatch(resetMain());
   if (props.roomBuilt) {
     renderRedirect = <Redirect to='/setup' />;
   } else {

@@ -3,12 +3,11 @@ import React from 'react';
 import Join from './Join';
 import Create from './Create';
 import { connect } from 'react-redux';
-import * as actions from './../actions';
+import {resetMain} from './../actions'
 
 function Landing(props){
-  const { dispatch } = props;
-  const { watchFirebaseRoomsRef } = actions;
-  dispatch(watchFirebaseRoomsRef());
+  const {dispatch} = props;
+  dispatch(resetMain());
   return (
     <div className="landing">
       <style jsx>{`
@@ -19,12 +18,6 @@ function Landing(props){
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-      }
-      button {
-        background-color: red;
-        border: none;
-        padding: 5px;
-        color: white;
       }
       `}</style>
       <Create />

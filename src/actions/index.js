@@ -18,15 +18,23 @@ export function addItems(roomKey, _items) {
 
 export function watchFirebaseRoomsRef() {
   return function(dispatch) {
-    rooms.on('child_added', data => {
-      const newRoom = Object.assign({}, data.val(), {
-        id: data.getKey()
-      });
-      const room = firebase.default.database().ref().child('rooms');
-      console.log(newRoom);
-      console.log(room);
-    });
+    // rooms.on('child_added', data => {
+    //   const newRoom = Object.assign({}, data.val(), {
+    //     id: data.getKey()
+    //   });
+    //   const room = firebase.default.database().ref().child('rooms');
+    //   console.log(newRoom);
+    //   console.log(room);
+    // });
   };
+}
+
+export function watchFirebaseMessagesRef() {
+  return function(dispatch) {
+    rooms.child(roomId + '/chat/messages').on('child_added', data => {
+      
+    });
+  }
 }
 
 export const changeView = () => ({

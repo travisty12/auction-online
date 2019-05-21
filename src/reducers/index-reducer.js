@@ -7,6 +7,7 @@ import registerViewReducer from './register-view-reducer';
 import joinViewReducer from './join-view-reducer';
 import previousViewReducer from './previous-view-reducer';
 import roomBuiltReducer from './room-built-reducer';
+import messageListReducer from './message-list-reducer';
 
 const rootReducer = combineReducers({
   currentItem: currentItemReducer,
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   previousView: previousViewReducer,
   joinView: joinViewReducer,
   roomBuilt: roomBuiltReducer,
+  messageList: messageListReducer,
 });
 
 export default rootReducer;

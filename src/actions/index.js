@@ -49,17 +49,22 @@ export const roomChecker = (key) => ({
 export function checkRoom(key) {
   return function(dispatch) {
     if (key) {
-
+      console.log(key);
       firebase.default.database().ref().child("rooms").on("value", function(snapshot) {
         if (snapshot.child(key).val()) {
           console.log(snapshot.child(key).val());
-          console.log("yes");
+          if (snapshot.child(key).val().items) {
+            console.log(snapshot.child(key).val().items.itemList);
+            dispatch(pullItems(key, snapshot.child(key).val().items.itemList));
+          }
           return dispatch(roomChecker(key));
         } else {
           console.log("no");
         }
         return;
       });
+    } else {
+      console.log('here');
     }
   }
 }
@@ -109,6 +114,7 @@ export function resetMain() {
 
 export function registerRoom() {
   return (dispatch) => {
+    dispatch(clearLocal());
     rooms.push({ active: false, });
     rooms.endAt().limitToLast(1).on('child_added', data => {
       // console.log(data);
@@ -126,6 +132,18 @@ export function registerRoom() {
     });
   }
 };
+
+export const fillItems = (items) => ({
+  type: c.FILL_ITEMS,
+  items
+});
+
+export function pullItems(roomId, items) {
+  return (dispatch) => {
+
+    return dispatch(fillItems(items));
+  }
+}
 
 export function addToRoom(itemList, roomId) {
   return (dispatch) => {

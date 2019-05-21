@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import {checkRoom, registerRoom} from './../actions';
+import {checkRoom, registerRoom, clearLocal} from './../actions';
 
 function Register(props){
   const ButtonStyle = {
@@ -22,8 +22,12 @@ function Register(props){
   function onSubmitKey(event) {
     event.preventDefault();
     if (_key.value) {
+      console.log('1');
       dispatch(checkRoom(_key.value));
+      _key.value = null;
     } else {
+      console.log('2');
+      dispatch(clearLocal());
       dispatch(registerRoom());
     }
   }

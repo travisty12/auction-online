@@ -15,6 +15,9 @@ export default (state = [], action) => {
     return newState;
   case c.CLEAR_ITEMS:
     return [];
+  case c.FILL_ITEMS:
+    console.log(action.items);
+    return action.items;
   default:
     return state;
   }

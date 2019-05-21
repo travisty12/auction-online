@@ -8,3 +8,4 @@ export const CHECK_ROOM = 'CHECK_ROOM';
 export const RESET_MAIN = 'RESET_MAIN';
 export const REMOVE_ITEM = 'REMOVE_ITEM';
 export const CLEAR_ITEMS = 'CLEAR_ITEMS';
+export const FILL_ITEMS = 'FILL_ITEMS';

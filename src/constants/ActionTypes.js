@@ -11,3 +11,4 @@ export const RESET_MAIN = 'RESET_MAIN';
 export const REMOVE_ITEM = 'REMOVE_ITEM';
 export const CLEAR_ITEMS = 'CLEAR_ITEMS';
 export const FILL_ITEMS = 'FILL_ITEMS';
+export const PULL_SETTINGS = 'PULL_SETTINGS';

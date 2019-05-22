@@ -4,6 +4,7 @@ import validKeyReducer from './valid-key-reducer';
 import itemListReducer from './item-list-reducer';
 import newItemReducer from './new-item-reducer';
 import registerViewReducer from './register-view-reducer';
+import settingReducer from './setting-reducer';
 import joinViewReducer from './join-view-reducer';
 import previousViewReducer from './previous-view-reducer';
 import roomBuiltReducer from './room-built-reducer';
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
   joinView: joinViewReducer,
   roomBuilt: roomBuiltReducer,
   messageList: messageListReducer,
+  settings: settingReducer,
 });
 
 export default rootReducer;

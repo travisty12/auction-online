@@ -7,7 +7,7 @@ import Current from './Current';
 function Items(props){
 
   const minBid = 5;
-
+  console.log(props.settings);
   const ItemsStyle = {
     width: '100%',
     display: 'flex',
@@ -26,7 +26,8 @@ function Items(props){
 
 const mapStateToProps = state => {
   return {
-    itemList: state.newItem
+    itemList: state.newItem,
+    settings: state.settings,
   };
 };
 

@@ -35,13 +35,14 @@ function Previous(props){
   if (props.previousView) {
     previous = <button style={ButtonStyle} onClick={() => buttonClick()}>Previous Items</button>;
   } else {
+    console.log(props.itemList);
     previous = <div style={PreviousStyle}><h3 onClick={() => buttonClick()}>Close</h3>{props.itemList.map((item, index) =>
       <div style={PreviousListStyle} key={index}>
         <div>
-          <h3>{item.item}</h3>
-          <h3>${item.bid}</h3>
+          <h3>{item}</h3>
+          <h3>${item}</h3>
         </div>
-        <h3>{item.bidder}</h3>
+        <h3>{item}</h3>
       </div>
     )}</div>;
   }
@@ -54,12 +55,13 @@ function Previous(props){
 
 const mapStateToProps = state => {
   return {
-    previousView: state.previousView
+    previousView: state.previousView,
+    
   };
 };
 
 Previous.propTypes = {
-  itemList: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.oneOfType([PropTypes.number,PropTypes.string])))
+  itemList: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number,PropTypes.string]))
 };
 
 export default connect(mapStateToProps)(Previous);

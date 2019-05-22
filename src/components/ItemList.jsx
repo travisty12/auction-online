@@ -39,16 +39,14 @@ function ItemList(props){
   function handleRemoveItem(index) {
     dispatch(removeItem(props.newItem, props.roomBuilt, index));
   }
-  function returnToSettings() {
-
-  }
+  console.log(props.newItem);
   return (
     <div style={PageViewStyle}>
       <NewItem />
       <div>
         {props.newItem.map((item, index) =>
           <div style={ItemListStyle} key={index}>
-            <h3>{index}: - {item.item}</h3>
+            <h3>{index}: - {item}</h3>
             <button onClick={() => handleRemoveItem(index)}>Remove</button>
           </div>
         )}
@@ -67,7 +65,7 @@ const mapStateToProps = state => {
 };
 
 ItemList.propTypes = {
-  newItem: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.oneOfType([PropTypes.number,PropTypes.string]))),
+  newItem: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number,PropTypes.string])),
   dispatch: PropTypes.func
 };
 

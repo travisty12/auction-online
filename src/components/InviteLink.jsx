@@ -5,15 +5,18 @@ function InviteLink(props){
   const InviteLinkStyle = {
     backgroundColor: '#45B5FF',
     border: 'none',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
     borderRadius: '10px',
     padding: '5px 15px 5px 15px',
     color: 'white',
-    fontSize: '2.75rem',
+    fontSize: '1.75rem',
   };
   return (
     <div style={InviteLinkStyle}>
-      <h1>Invite Link</h1>
-      <p>{props.linkId}</p>
+      <h4>Invite Link</h4>
+      <h5>{props.linkId}</h5>
     </div>
   );
 }

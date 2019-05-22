@@ -6,8 +6,7 @@ export default (state = [], action) => {
   switch(action.type) {
   case c.ADD_ITEM:
     newState = state.slice();
-    newState.push({
-      item: action.item});
+    newState.push(action.item);
     return newState;
   case c.REMOVE_ITEM:
     newState = state.slice();
@@ -16,7 +15,6 @@ export default (state = [], action) => {
   case c.CLEAR_ITEMS:
     return [];
   case c.FILL_ITEMS:
-    console.log(action.items);
     return action.items;
   default:
     return state;

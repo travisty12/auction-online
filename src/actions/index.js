@@ -32,7 +32,7 @@ export function watchFirebaseRoomsRef() {
 export function watchFirebaseMessagesRef() {
   return function(dispatch) {
     rooms.child(roomId + '/chat/messages').on('child_added', data => {
-      
+
     });
   }
 }
@@ -68,9 +68,12 @@ export function checkRoom(key) {
       firebase.default.database().ref().child("rooms").on("value", function(snapshot) {
         if (snapshot.child(key).val()) {
           console.log(snapshot.child(key).val());
-          if (snapshot.child(key).val().items) {
-            console.log(snapshot.child(key).val().items.itemList);
-            dispatch(pullItems(key, snapshot.child(key).val().items.itemList));
+          if (snapshot.child(key).val().itemList) {
+            console.log(snapshot.child(key).val().itemList);
+            dispatch(pullItems(snapshot.child(key).val().itemList));
+          }
+          if (snapshot.child(key).val().settings) {
+            dispatch(pullSettings(snapshot.child(key).val().settings));
           }
           return dispatch(roomChecker(key));
         } else {
@@ -148,20 +151,28 @@ export function registerRoom() {
   }
 };
 
-export const fillItems = (items) => ({
+export const pullItems = (items) => ({
   type: c.FILL_ITEMS,
   items
 });
 
-export function pullItems(roomId, items) {
-  return (dispatch) => {
+export const pullSettings = (settings) => ({
+  type: c.PULL_SETTINGS,
+  settings
+})
 
-    return dispatch(fillItems(items));
-  }
-}
+// export function pullItems(roomId, items) {
+//   return (dispatch) => {
+//
+//     return dispatch(fillItems(items));
+//   }
+// }
 
 export function addToRoom(itemList, roomId) {
   return (dispatch) => {
-    firebase.default.database().ref('rooms/' + roomId + '/items').set({itemList});
+    firebase.default.database().ref('rooms/' + roomId).set({
+      id: roomId,
+      itemList
+    });
   }
 }

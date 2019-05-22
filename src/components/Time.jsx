@@ -19,11 +19,11 @@ class Time extends React.Component{
 
   render() {
     const TimeStyle = {
-      backgroundColor: '#800000',
-      color: 'white',
-      padding: '5px',
-      borderRadius: '10px',
+      backgroundColor: '#45B5FF',
       border: 'none',
+      borderRadius: '10px',
+      padding: '5px 15px 5px 15px',
+      color: 'white',
       fontSize: '2.75rem',
     };
     const DivStyle = {

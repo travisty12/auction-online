@@ -18,11 +18,11 @@ function TimePerItem(props){
     alignItems: 'center',
   };
   const ButtonStyle = {
-    backgroundColor: '#800000',
-    color: 'white',
-    padding: '5px',
-    borderRadius: '10px',
+    backgroundColor: '#45B5FF',
     border: 'none',
+    borderRadius: '10px',
+    padding: '5px 15px 5px 15px',
+    color: 'white',
     fontSize: '2.75rem',
   };
   let _tpi = null;

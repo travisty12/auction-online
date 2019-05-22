@@ -9,9 +9,19 @@ function Back(props){
   function resetMainPage() {
     dispatch(resetMain());
   }
+  const BackStyle = {
+    backgroundColor: '#45B5FF',
+    border: 'none',
+    borderRadius: '10px',
+    padding: '5px 15px 5px 15px',
+  }
+  const LinkStyle = {
+    color: 'white',
+    textDecoration: 'none',
+  }
   return (
     <div>
-      <h4 onClick={resetMainPage()}><Link to='/'>Back</Link></h4>
+      <h4 style={BackStyle} onClick={resetMainPage()}><Link style = {LinkStyle} to='/'>Back</Link></h4>
     </div>
   );
 }

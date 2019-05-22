@@ -16,9 +16,9 @@ function ItemList(props){
     alignItems: 'center'
   };
   const ButtonStyle = {
-    backgroundColor: '#800000',
+    backgroundColor: '#45B5FF',
     color: 'white',
-    padding: '5px',
+    padding: '5px 15px 5px 15px',
     border: 'none',
     borderRadius: '10px',
     textDecoration: 'none',

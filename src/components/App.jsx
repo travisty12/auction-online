@@ -13,7 +13,7 @@ function App() {
     <div className="mainContainer">
       <style jsx>{`
         .mainContainer {
-          background-image: linear-gradient(to bottom right, #FFDC00 0%, #D4AF37 100%);
+          background-image: linear-gradient(to bottom right, #FFEEF4 0%, #7533E8 50%, #FFEEF4 100%);
           border: 2px solid rgba(00,00,00,0.1);
           outline: rgba(255, 220, 0, .1) solid 2px;
           width: 80vw;
@@ -39,7 +39,7 @@ function App() {
           margin: 0;
         }
         body {
-          background-color: #800000;
+          background-color: #FFEEF4;
           display: flex;
           justify-conent: center;
         }

@@ -3,10 +3,12 @@ import React from 'react';
 
 function InviteLink(props){
   const InviteLinkStyle = {
-    backgroundColor: '#800000',
-    color: 'white',
-    padding: '5px',
+    backgroundColor: '#45B5FF',
+    border: 'none',
     borderRadius: '10px',
+    padding: '5px 15px 5px 15px',
+    color: 'white',
+    fontSize: '2.75rem',
   };
   return (
     <div style={InviteLinkStyle}>

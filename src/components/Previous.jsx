@@ -11,10 +11,10 @@ function Previous(props){
     dispatch(changePreviousView());
   }
   const ButtonStyle = {
-    backgroundColor: '#800000',
+    backgroundColor: '#45B5FF',
     border: 'none',
     borderRadius: '10px',
-    padding: '5px',
+    padding: '5px 15px 5px 15px',
     color: 'white',
     fontSize: '2.75rem',
   };

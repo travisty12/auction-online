@@ -15,10 +15,9 @@ function Items(props){
     alignItems: 'center',
 
   };
-
   return (
     <div style={ItemsStyle}>
-      <Current />
+      <Current itemList={props.itemList} />
       <Previous itemList={props.itemList} />
     </div>
   );

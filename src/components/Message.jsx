@@ -13,7 +13,7 @@ function Message(props){
   return (
     <div style={MessageStyle}>
       <div>
-        <h4>{props.name} - {props.time}</h4>
+        <h4>{props.name}</h4>
       </div>
       <h4>{props.content}</h4>
     </div>
@@ -22,7 +22,6 @@ function Message(props){
 
 Message.propTypes = {
   name: PropTypes.string,
-  time: PropTypes.string,
   content: PropTypes.string,
 };
 

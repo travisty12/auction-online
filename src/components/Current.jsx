@@ -11,7 +11,9 @@ function Current(){
   const CurrentItemStyle = {
     width: '100%',
     display: 'flex',
+    flexDirection: 'column',
     justifyContent: 'space-around',
+    alignItems: 'center',
   };
   const CurrentStyle = {
     width: '75%',
@@ -28,7 +30,7 @@ function Current(){
         <h4>Highest bid: {exampleItem.bid}</h4>
         <h4>Bidder: {exampleItem.bidder}</h4>
       </div>
-      <div>
+      <div style={CurrentItemStyle}>
         <h3>Make bid</h3>
         <div>
           <input />

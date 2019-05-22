@@ -8,11 +8,23 @@ import 'firebase/database';
 
 firebase.initializeApp(firebaseConfig);
 const rooms = firebase.default.database().ref('rooms');
-console.log(rooms);
+console.log(rooms.value);
 
 export function addItems(roomKey, _items) {
   return () => rooms[roomKey].push({
     items: _items
+  });
+}
+export function watchFirebaseMessagesRef(dispatch, roomId) {
+  dispatch(startWatch());
+  dispatch(grabAllMessages(rooms.child(roomId + '/chat')))
+  rooms.child(roomId + '/chat').endAt().limitToLast(1).on('child_added', data => {
+    console.log(data.val());
+    if (data.val()){
+      dispatch(pullMessage(data.val()));
+
+    }
+    return true;
   });
 }
 
@@ -28,14 +40,9 @@ export function watchFirebaseRoomsRef() {
     // });
   };
 }
-
-export function watchFirebaseMessagesRef() {
-  return function(dispatch) {
-    rooms.child(roomId + '/chat/messages').on('child_added', data => {
-
-    });
-  }
-}
+export const startWatch = () => ({
+  type: c.START_WATCH
+});
 
 export const changeView = () => ({
   type: c.CHANGE_VIEW
@@ -67,15 +74,14 @@ export function checkRoom(key) {
       console.log(key);
       firebase.default.database().ref().child("rooms").on("value", function(snapshot) {
         if (snapshot.child(key).val()) {
-          console.log(snapshot.child(key).val());
           if (snapshot.child(key).val().itemList) {
-            console.log(snapshot.child(key).val().itemList);
             dispatch(pullItems(snapshot.child(key).val().itemList));
           }
           if (snapshot.child(key).val().settings) {
             dispatch(pullSettings(snapshot.child(key).val().settings));
           }
-          return dispatch(roomChecker(key));
+          dispatch(roomChecker(key));
+          return;
         } else {
           console.log("no");
         }
@@ -107,6 +113,7 @@ export function setSettings(roomId, settings) {
       time: settings.time,
       tpi: settings.tpi
     });
+    firebase.default.database().ref('rooms/' + roomId + '/current').set(0);
   }
 }
 
@@ -143,9 +150,13 @@ export function registerRoom() {
       // console.log(newRoom);
       // console.log(room);
       firebase.default.database().ref('rooms/' + data.getKey()).set({
-        id: data.getKey()
+        id: data.getKey(),
+        settings: {
+          minBid: '5',
+          time: '2019-05-23T10:00',
+          tpi: '10',
+        }
       });
-      console.log(data.getKey());
       return dispatch(roomChecker(data.getKey()));
     });
   }
@@ -167,6 +178,33 @@ export const pullSettings = (settings) => ({
 //     return dispatch(fillItems(items));
 //   }
 // }
+
+export const addMessage = (message) => ({
+  type: c.ADD_MESSAGE,
+  message
+});
+
+export const pullMessage = (message) => ({
+  type: c.GRAB_MESSAGE,
+  message
+});
+
+export const grabAllMessages = (messageList) => ({
+  type: c.GRAB_ALL,
+  messageList
+})
+
+
+export function pushMessage(name,message,id, index) {
+  return (dispatch) => {
+    firebase.default.database().ref('rooms/' + id + '/chat/' + index).set({
+      name,
+      message
+    });
+    // const out = {name, message};
+    // return dispatch(addMessage(out));
+  }
+}
 
 export function addToRoom(itemList, roomId) {
   return (dispatch) => {

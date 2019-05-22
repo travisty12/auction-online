@@ -3,7 +3,7 @@ import React from 'react';
 import Message from './Message';
 import Moment from 'moment';
 
-function MessageList(){
+function MessageList(props){
 
   let masterMessageList = [
     {
@@ -31,11 +31,10 @@ function MessageList(){
     backgroundColor: 'grey',
     width: '100%'
   };
-
   return (
     <div style={MessageListStyle}>
-      {masterMessageList.map((message, index) =>
-        <Message name={message.name} time={message.formattedTimeStamp} content={message.message} key={index}/>
+      {props.messageList.map((message, index) =>
+        <Message name={message.name} content={message.message} key={index}/>
       )}
     </div>
   );

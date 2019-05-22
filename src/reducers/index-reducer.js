@@ -9,6 +9,7 @@ import joinViewReducer from './join-view-reducer';
 import previousViewReducer from './previous-view-reducer';
 import roomBuiltReducer from './room-built-reducer';
 import messageListReducer from './message-list-reducer';
+import watchReducer from './is-watching-reducer';
 
 const rootReducer = combineReducers({
   currentItem: currentItemReducer,
@@ -21,6 +22,7 @@ const rootReducer = combineReducers({
   roomBuilt: roomBuiltReducer,
   messageList: messageListReducer,
   settings: settingReducer,
+  isWatching: watchReducer,
 });
 
 export default rootReducer;

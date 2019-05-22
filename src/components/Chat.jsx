@@ -2,8 +2,9 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import MessageList from './MessageList';
 import Compose from './Compose';
+import { connect} from 'react-redux';
 
-function Chat(){
+function Chat(props){
   const ChatStyle = {
     width: '100%',
     display: 'flex',
@@ -12,13 +13,19 @@ function Chat(){
   };
   return (
     <div style ={ChatStyle}>
-      <MessageList />
+      <MessageList messageList = {props.messageList}/>
       <Compose />
     </div>
   );
 }
 
+const mapStateToProps = state => {
+  return {
+    messageList: state.messageList,
+  };
+};
+
 // Chat.propTypes = {
 // };
 
-export default Chat;
+export default connect(mapStateToProps)(Chat);

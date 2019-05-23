@@ -17,7 +17,23 @@ export function addItems(roomKey, _items) {
 }
 export function watchFirebaseMessagesRef(dispatch, roomId) {
   dispatch(startWatch());
-  dispatch(grabAllMessages(rooms.child(roomId + '/chat')))
+  firebase.default.database().ref().child("rooms/" + roomId + '/chat').on("value", function(snapshot) {
+    console.log(snapshot.val());
+    if (snapshot.val()) {
+      let messageOut = [];
+      console.log(snapshot.val());
+      if (snapshot.val().length > 1) {
+        console.log(snapshot.val().slice(0,snapshot.val().length - 1));
+        messageOut = snapshot.val().slice(0,snapshot.val().length - 1);
+      } else {
+        messageOut = snapshot.val();
+      }
+      console.log(messageOut);
+      dispatch(grabAllMessages(messageOut));
+      return true;
+    }
+    return true;
+  });
   rooms.child(roomId + '/chat').endAt().limitToLast(1).on('child_added', data => {
     console.log(data.val());
     if (data.val()){

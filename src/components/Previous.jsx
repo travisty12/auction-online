@@ -40,9 +40,8 @@ function Previous(props){
       <div style={PreviousListStyle} key={index}>
         <div>
           <h3>{item}</h3>
-          <h3>${item}</h3>
         </div>
-        <h3>{item}</h3>
+        <h3>${props.minBid}</h3>
       </div>
     )}</div>;
   }
@@ -56,7 +55,7 @@ function Previous(props){
 const mapStateToProps = state => {
   return {
     previousView: state.previousView,
-    
+
   };
 };
 

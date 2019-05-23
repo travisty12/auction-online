@@ -18,7 +18,7 @@ function Items(props){
   return (
     <div style={ItemsStyle}>
       <Current itemList={props.itemList} />
-      <Previous itemList={props.itemList} />
+      <Previous minBid={props.settings.minBid} itemList={props.itemList} />
     </div>
   );
 }

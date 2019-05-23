@@ -31,6 +31,7 @@ function MessageList(props){
     backgroundColor: 'grey',
     width: '100%'
   };
+  console.log(props.messageList);
   return (
     <div style={MessageListStyle}>
       {props.messageList.map((message, index) =>

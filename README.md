@@ -1,6 +1,6 @@
 # Auction Online - Planning Phase
 
-### Created by **Travis Toal**, 5/2/19
+### Created by **Travis Scott**, 5/2/19
 
 ## Description (current)
 * _The purpose of this app is to simulate an online auction, allowing many users to simultaneously view the application and make 'bids' on items. The minimum viable product includes a time-dependent auction process, which updates in real-time to show the highest bid and bidder, and a live-chat functionality. This project will use Redux to keep domain data and application state, which will be fed to / pulled from Firebase._
@@ -120,4 +120,4 @@ _No known bugs as of 5/3/19_
 _This software is licensed under the ISC license_
 
 Copyright (c) 2019
-**_Travis Toal_**  
+**_Travis Scott_**  
